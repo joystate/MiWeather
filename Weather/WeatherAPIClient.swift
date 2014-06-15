@@ -11,11 +11,11 @@ import Foundation
 class WeatherAPIClient: NSObject {
     
     let constants = Constants()
-    let urlStringForLocation: String = "/forecast/daily?lat=41&lon=74&cnt=10&mode=json"
+    let urlStringForLocation: String = "/forecast/daily?lat=40.7127&lon=-74.0059&cnt=7&units=metric&mode=json&APPID="
     
     func fetchForecast(completion: (result: NSDictionary) -> ()) {
         
-        var urlString: String = constants.baseURL + urlStringForLocation
+        var urlString: String = constants.baseURL + urlStringForLocation + constants.weatherAPIKey
         var url: NSURL = NSURL.URLWithString(urlString)
         var request: NSURLRequest = NSURLRequest(URL: url)
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -30,8 +30,9 @@ class WeatherAPIClient: NSObject {
             
             })
         
-        task.resume() 
+        task.resume()
     }
+    
 }
 
 

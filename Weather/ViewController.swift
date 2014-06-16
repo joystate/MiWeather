@@ -53,7 +53,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as WeatherCell
         var day = self.week[indexPath.row]
         
-        cell.textLabel.text = day.description
+        cell.mainLabel.text = day.date
+        var dayImage = UIImage(named: day.iconName! + "d")
+        var nightImage = UIImage(named: day.iconName! + "n")
+        
+        cell.dayView.image = dayImage
+        cell.nigthView.image = nightImage
         
         return cell
     }

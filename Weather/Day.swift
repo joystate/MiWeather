@@ -33,7 +33,7 @@ class Day: NSObject {
     
     
     func description() -> String {
-        return "Day humidity: \(self.humidity), day temp: \(self.dayTemp)"
+        return "Day humidity: \(self.humidity), day temp: \(self.dayTemp), day icon name: \(self.iconName)"
     }
    
 }

@@ -49,8 +49,9 @@ class WeatherAPIClient: NSObject {
         var identif: String = String(weatherArray[0]["id"] as Int)
         var weatherDesc: String = weatherArray[0]["description"] as String
         var iconName: String = weatherArray[0]["icon"] as String
+        var iconNumber = iconName.substringToIndex(countElements(iconName)-1)
         
-        var day = Day(date: dateString, dayTemp: dayTemp, nightTemp: nightTemp, pressure: pressure, humidity: humidity, identif: identif, weatherDescription: weatherDesc, iconName: iconName)
+        var day = Day(date: dateString, dayTemp: dayTemp, nightTemp: nightTemp, pressure: pressure, humidity: humidity, identif: identif, weatherDescription: weatherDesc, iconName: iconNumber)
         
         return day
     }
@@ -62,7 +63,7 @@ class WeatherAPIClient: NSObject {
         var date = NSDate(timeIntervalSince1970:interval)
         
         var dateFmt = NSDateFormatter()
-        var format: String = "dd-MM"
+        var format: String = "MM/dd"
         dateFmt.dateFormat = format
         var dateString: String = dateFmt.stringFromDate(date)
         

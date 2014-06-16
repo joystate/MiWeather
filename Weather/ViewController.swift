@@ -8,15 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var week: Day[] = []
-                            
+    
+    @IBOutlet var tableView : UITableView
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         let apiClient = WeatherAPIClient()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        var nipName = UINib(nibName: "WeatherCell", bundle:nil)
+        self.tableView.registerNib(nipName, forCellReuseIdentifier: "Cell")
         
         apiClient.fetchForecast({ dict in
             
@@ -29,17 +36,30 @@ class ViewController: UIViewController {
             }
 
             println(self.week)
+            self.tableView.reloadData()
 
         })
 
     }
+
     
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.week.count
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+        
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as WeatherCell
+        var day = self.week[indexPath.row]
+        
+        cell.textLabel.text = day.description
+        
+        return cell
     }
 
+    
+    
 
 }
 

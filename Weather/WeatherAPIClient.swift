@@ -62,7 +62,7 @@ class WeatherAPIClient: NSObject {
         var date = NSDate(timeIntervalSince1970:interval)
         
         var dateFmt = NSDateFormatter()
-        var format: String = "dd-MM-yyyy"
+        var format: String = "dd-MM"
         dateFmt.dateFormat = format
         var dateString: String = dateFmt.stringFromDate(date)
         

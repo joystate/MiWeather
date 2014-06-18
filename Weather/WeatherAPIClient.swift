@@ -42,8 +42,8 @@ class WeatherAPIClient: NSObject {
         var dateString: String = self.epochToDate(unixDate)
         
         var tempDict: Dictionary<String, Double> = forecast["temp"] as Dictionary
-        var dayTemp: String = String(tempDict["day"]! as Double)
-        var nightTemp: String = String(tempDict["night"]! as Double)
+        var dayTemp: String = String(Int(tempDict["day"]! as Double))
+        var nightTemp: String = String(Int(tempDict["night"]! as Double))
         
         var weatherArray: Array<AnyObject> = forecast["weather"] as Array
         var identif: String = String(weatherArray[0]["id"] as Int)

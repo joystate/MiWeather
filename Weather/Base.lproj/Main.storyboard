@@ -16,12 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-IM-aTm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-IM-aTm">
                                 <rect key="frame" x="50" y="70" width="430" height="410"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="377" id="ahe-mg-kh0"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="LqI-qI-F4h" customClass="WeatherCell" customModule="Weather" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -30,21 +27,36 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ahe-mg-kh0"/>
-                                    </mask>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zan-IM-aTm" firstAttribute="top" secondItem="zh6-ut-Ue2" secondAttribute="bottom" constant="50" id="PLf-0s-Skg"/>
-                            <constraint firstAttribute="bottom" secondItem="Zan-IM-aTm" secondAttribute="bottom" id="Vs7-oD-dOz"/>
-                            <constraint firstItem="Zan-IM-aTm" firstAttribute="leading" secondItem="DW8-hb-UIw" secondAttribute="leading" constant="50" id="dZB-03-8Gp"/>
-                            <constraint firstAttribute="trailing" secondItem="Zan-IM-aTm" secondAttribute="trailing" id="uEZ-mA-cQO"/>
+                            <constraint firstAttribute="trailing" secondItem="Zan-IM-aTm" secondAttribute="trailing" constant="25" id="3iJ-nq-9hp">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Zan-IM-aTm" firstAttribute="leading" secondItem="DW8-hb-UIw" secondAttribute="leading" constant="25" id="7tL-vf-v1s">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="Zan-IM-aTm" firstAttribute="top" secondItem="zh6-ut-Ue2" secondAttribute="bottom" constant="30" id="Pb8-hH-9VG"/>
+                            <constraint firstAttribute="bottom" secondItem="Zan-IM-aTm" secondAttribute="bottom" constant="30" id="fW3-Hc-oiM"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3iJ-nq-9hp"/>
+                                <exclude reference="7tL-vf-v1s"/>
+                                <exclude reference="Pb8-hH-9VG"/>
+                                <exclude reference="fW3-Hc-oiM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="3iJ-nq-9hp"/>
+                                <include reference="7tL-vf-v1s"/>
+                                <include reference="Pb8-hH-9VG"/>
+                                <include reference="fW3-Hc-oiM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Zan-IM-aTm" id="Dlb-MX-dUu"/>

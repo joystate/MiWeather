@@ -15,7 +15,10 @@ class WeatherCell: UITableViewCell {
     @IBOutlet var dayView : UIImageView
     @IBOutlet var nigthView : UIImageView
     
-
+    @IBOutlet var dayLabel : UILabel
+    @IBOutlet var nightLabel : UILabel
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +26,9 @@ class WeatherCell: UITableViewCell {
     
     init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
+        
+        //self.bringSubviewToFront(self.dayLabel)
+        //self.bringSubviewToFront(self.nightLabel)
         
         
     }

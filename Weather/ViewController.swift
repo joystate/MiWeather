@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let apiClient = WeatherAPIClient()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.showsVerticalScrollIndicator = false
+        self.tableView.allowsSelection = false
         
         var nipName = UINib(nibName: "WeatherCell", bundle:nil)
         self.tableView.registerNib(nipName, forCellReuseIdentifier: "Cell")
@@ -58,7 +60,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var nightImage = UIImage(named: day.iconName! + "n")
         
         cell.dayView.image = dayImage
+        cell.dayView.alpha = 0.5
         cell.nigthView.image = nightImage
+        cell.nigthView.alpha = 0.5
+        
+        cell.dayLabel.text = "\(day.dayTemp) C"
+        cell.nightLabel.text = "\(day.nightTemp) C"
+
         
         return cell
     }

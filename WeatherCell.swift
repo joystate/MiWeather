@@ -11,12 +11,12 @@ import UIKit
 class WeatherCell: UITableViewCell {
     
     
-    @IBOutlet var mainLabel : UILabel
-    @IBOutlet var dayView : UIImageView
-    @IBOutlet var nigthView : UIImageView
+    @IBOutlet var mainLabel : UILabel!
+    @IBOutlet var dayView : UIImageView!
+    @IBOutlet var nigthView : UIImageView!
     
-    @IBOutlet var dayLabel : UILabel
-    @IBOutlet var nightLabel : UILabel
+    @IBOutlet var dayLabel : UILabel?
+    @IBOutlet var nightLabel : UILabel?
     
     
     override func awakeFromNib() {
@@ -24,7 +24,7 @@ class WeatherCell: UITableViewCell {
         // Initialization code
     }
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
         
         //self.bringSubviewToFront(self.dayLabel)
@@ -33,6 +33,9 @@ class WeatherCell: UITableViewCell {
         
     }
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

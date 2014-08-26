@@ -10,14 +10,14 @@ import UIKit
 
 class Day: NSObject {
     
-    var date: String?
-    var dayTemp: String?
-    var nightTemp: String?
-    var pressure: String?
-    var humidity: String?
-    var identif: String?
-    var weatherDescription: String?
-    var iconName: String?
+    var date: String!
+    var dayTemp: String!
+    var nightTemp: String!
+    var pressure: String!
+    var humidity: String!
+    var identif: String!
+    var weatherDescription: String!
+    var iconName: String!
     
     
     init(date: String, dayTemp: String, nightTemp: String, pressure: String, humidity: String, identif: String, weatherDescription: String, iconName: String) {

@@ -37,7 +37,7 @@ class WeatherAPIClient: NSObject {
     func forecastToDay (forecast: AnyObject) -> Day {
         
         var humidity: String = String(forecast["humidity"]! as Int)
-        var pressure: String = String(forecast["pressure"]! as Double)
+        var pressure: String = String(forecast["pressure"]! as Int)
         var unixDate: Double = forecast["dt"] as Double
         var dateString: String = self.epochToDate(unixDate)
         
@@ -49,7 +49,7 @@ class WeatherAPIClient: NSObject {
         var identif: String = String(weatherArray[0]["id"] as Int)
         var weatherDesc: String = weatherArray[0]["description"] as String
         var iconName: String = weatherArray[0]["icon"] as String
-        var iconNumber = iconName.substringToIndex(countElements(iconName)-1)
+        var iconNumber = (iconName as NSString).substringToIndex(countElements(iconName)-1)
         
         var day = Day(date: dateString, dayTemp: dayTemp, nightTemp: nightTemp, pressure: pressure, humidity: humidity, identif: identif, weatherDescription: weatherDesc, iconName: iconNumber)
         

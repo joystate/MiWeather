@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2uv-HA-yaC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2uv-HA-yaC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,53 +14,37 @@
                         <viewControllerLayoutGuide type="bottom" id="9oE-Qh-qVW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DW8-hb-UIw">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zan-IM-aTm">
-                                <rect key="frame" x="50" y="70" width="430" height="410"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="LqI-qI-F4h" customClass="WeatherCell" customModule="Weather" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LqI-qI-F4h" id="dA7-Pe-eu8">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZDp-vQ-23E">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="181" y="281" width="37" height="37"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Zan-IM-aTm" secondAttribute="trailing" constant="25" id="3iJ-nq-9hp">
-                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                            </constraint>
-                            <constraint firstItem="Zan-IM-aTm" firstAttribute="leading" secondItem="DW8-hb-UIw" secondAttribute="leading" constant="25" id="7tL-vf-v1s">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
-                            </constraint>
-                            <constraint firstItem="Zan-IM-aTm" firstAttribute="top" secondItem="zh6-ut-Ue2" secondAttribute="bottom" constant="30" id="Pb8-hH-9VG"/>
-                            <constraint firstAttribute="bottom" secondItem="Zan-IM-aTm" secondAttribute="bottom" constant="30" id="fW3-Hc-oiM"/>
+                            <constraint firstAttribute="centerY" secondItem="ZDp-vQ-23E" secondAttribute="centerY" constant="-0.5" id="5GF-zk-oN4"/>
+                            <constraint firstAttribute="centerX" secondItem="ZDp-vQ-23E" secondAttribute="centerX" constant="-0.5" id="xqI-c6-rKu"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="3iJ-nq-9hp"/>
-                                <exclude reference="7tL-vf-v1s"/>
-                                <exclude reference="Pb8-hH-9VG"/>
-                                <exclude reference="fW3-Hc-oiM"/>
+                                <exclude reference="5GF-zk-oN4"/>
+                                <exclude reference="xqI-c6-rKu"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
+                        <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="3iJ-nq-9hp"/>
-                                <include reference="7tL-vf-v1s"/>
-                                <include reference="Pb8-hH-9VG"/>
-                                <include reference="fW3-Hc-oiM"/>
+                                <include reference="5GF-zk-oN4"/>
+                                <include reference="xqI-c6-rKu"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Zan-IM-aTm" id="Dlb-MX-dUu"/>
+                        <outlet property="spinner" destination="ZDp-vQ-23E" id="Bgd-x0-PR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rat-wN-zc3" userLabel="First Responder" sceneMemberID="firstResponder"/>

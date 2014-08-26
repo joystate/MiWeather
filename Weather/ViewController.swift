@@ -9,15 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
-    var week: Day[] = []
+    var week: [Day] = []
     
-    @IBOutlet var tableView : UITableView
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    var tableView : UITableView = UITableView(frame: CGRectZero)
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.view.addSubview(self.tableView)
+        self.tableView.frame = CGRectMake(30,
+            self.view.frame.height/2, self.view.frame.width-50, 1)
+//        self.tableView.layer.anchorPoint = CGPointMake(self.view.frame.width/2, self.view.frame.height/2)
+        self.spinner.startAnimating()
         let apiClient = WeatherAPIClient()
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -38,10 +47,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
 
             println(self.week)
+            self.spinner.stopAnimating()
             self.tableView.reloadData()
-
+            UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseOut, animations: {
+                self.tableView.frame = CGRectMake(30, 20,
+                    self.view.frame.width - 50, self.view.frame.height - 50)
+                }, completion: { finished in
+                    println("opened!")
+            })
         })
-
     }
 
     
@@ -64,10 +78,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.nigthView.image = nightImage
         cell.nigthView.alpha = 0.5
         
-        cell.dayLabel.text = "\(day.dayTemp) C"
-        cell.nightLabel.text = "\(day.nightTemp) C"
+        cell.dayLabel!.text = "\(day.dayTemp) C"
+        cell.nightLabel!.text = "\(day.nightTemp) C"
 
-        
         return cell
     }
 

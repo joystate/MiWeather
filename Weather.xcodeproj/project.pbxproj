@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0554B6AC194D4A9D00E767C5 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */; };
-		0554B6AE194D4AAD00E767C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554B6AD194D4AAD00E767C5 /* Constants.swift */; };
 		0554B6B0194E36A700E767C5 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554B6AF194E36A700E767C5 /* Day.swift */; };
 		0580C041194D30F5002B230B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580C040194D30F5002B230B /* AppDelegate.swift */; };
 		0580C043194D30F5002B230B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580C042194D30F5002B230B /* ViewController.swift */; };
@@ -35,6 +34,7 @@
 		05B0E251194E7F4300820EC7 /* 50n.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B0E23F194E7F4300820EC7 /* 50n.png */; };
 		05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0E252194E856000820EC7 /* WeatherCell.swift */; };
 		05B0E255194E856000820EC7 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B0E253194E856000820EC7 /* WeatherCell.xib */; };
+		45168BF419ABA1F600A1461A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45168BF319ABA1F600A1461A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPIClient.swift; path = Weather/WeatherAPIClient.swift; sourceTree = "<group>"; };
-		0554B6AD194D4AAD00E767C5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Weather/Constants.swift; sourceTree = "<group>"; };
 		0554B6AF194E36A700E767C5 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Weather/Day.swift; sourceTree = "<group>"; };
 		0580C03B194D30F5002B230B /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0580C03F194D30F5002B230B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +79,8 @@
 		05B0E23F194E7F4300820EC7 /* 50n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50n.png; sourceTree = "<group>"; };
 		05B0E252194E856000820EC7 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = SOURCE_ROOT; };
 		05B0E253194E856000820EC7 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = SOURCE_ROOT; };
+		45168BF319ABA1F600A1461A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		0580C032194D30F5002B230B = {
 			isa = PBXGroup;
 			children = (
+				459D16E419AC304000DB9CFC /* QuartzCore.framework */,
 				05B0E258194E91BF00820EC7 /* Model */,
 				05B0E257194E919C00820EC7 /* Controllers */,
 				05B0E256194E861100820EC7 /* View */,
@@ -205,8 +207,8 @@
 		05B0E258194E91BF00820EC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45168BF319ABA1F600A1461A /* Constants.swift */,
 				0554B6AF194E36A700E767C5 /* Day.swift */,
-				0554B6AD194D4AAD00E767C5 /* Constants.swift */,
 				0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */,
 			);
 			name = Model;
@@ -335,7 +337,7 @@
 				05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */,
 				0580C041194D30F5002B230B /* AppDelegate.swift in Sources */,
 				0554B6B0194E36A700E767C5 /* Day.swift in Sources */,
-				0554B6AE194D4AAD00E767C5 /* Constants.swift in Sources */,
+				45168BF419ABA1F600A1461A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

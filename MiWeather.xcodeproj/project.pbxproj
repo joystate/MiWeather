@@ -132,6 +132,8 @@
 		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Documents/Weather/Constants.swift; sourceTree = "<group>"; };
 		4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDataStore.swift; sourceTree = "<group>"; };
 		4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cache.xcdatamodel; sourceTree = "<group>"; };
+		4581FD701A8EB84600CAB18C /* MiWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MiWeather.entitlements; sourceTree = "<group>"; };
+		4581FD711A8EB90900CAB18C /* MiWeather WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MiWeather WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 		0580C03D194D30F5002B230B /* MiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				4581FD701A8EB84600CAB18C /* MiWeather.entitlements */,
 				0580C040194D30F5002B230B /* AppDelegate.swift */,
 				450780CA1A8E958900B08E3F /* Service */,
 				05B0E258194E91BF00820EC7 /* Models */,
@@ -298,6 +301,7 @@
 		450AE7BA1A8EA45900C78729 /* MiWeather WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4581FD711A8EB90900CAB18C /* MiWeather WatchKit Extension.entitlements */,
 				450AE7D81A8EA90600C78729 /* ForecastRowController.swift */,
 				450AE7BD1A8EA45900C78729 /* InterfaceController.swift */,
 				450AE7BF1A8EA45900C78729 /* Images.xcassets */,
@@ -416,6 +420,12 @@
 				TargetAttributes = {
 					0580C03A194D30F5002B230B = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = RRT3YS6M8P;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0580C04C194D30F6002B230B = {
 						CreatedOnToolsVersion = 6.0;
@@ -423,6 +433,12 @@
 					};
 					450AE7B61A8EA45900C78729 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = RRT3YS6M8P;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					450AE7C21A8EA45900C78729 = {
 						CreatedOnToolsVersion = 6.2;
@@ -658,11 +674,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = MiWeather/MiWeather.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MiWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MiWeather;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -671,11 +691,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = MiWeather/MiWeather.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = MiWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = MiWeather;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -718,6 +742,9 @@
 		450AE7D11A8EA45900C78729 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MiWeather WatchKit Extension/MiWeather WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -727,6 +754,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -734,11 +762,15 @@
 		450AE7D21A8EA45900C78729 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MiWeather WatchKit Extension/MiWeather WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MiWeather WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

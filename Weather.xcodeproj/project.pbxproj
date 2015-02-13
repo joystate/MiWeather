@@ -34,7 +34,7 @@
 		05B0E251194E7F4300820EC7 /* 50n.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B0E23F194E7F4300820EC7 /* 50n.png */; };
 		05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0E252194E856000820EC7 /* WeatherCell.swift */; };
 		05B0E255194E856000820EC7 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B0E253194E856000820EC7 /* WeatherCell.xib */; };
-		45168BF419ABA1F600A1461A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45168BF319ABA1F600A1461A /* Constants.swift */; };
+		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,7 @@
 		05B0E23F194E7F4300820EC7 /* 50n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50n.png; sourceTree = "<group>"; };
 		05B0E252194E856000820EC7 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = SOURCE_ROOT; };
 		05B0E253194E856000820EC7 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = SOURCE_ROOT; };
-		45168BF319ABA1F600A1461A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Weather/Constants.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -207,9 +207,9 @@
 		05B0E258194E91BF00820EC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				45168BF319ABA1F600A1461A /* Constants.swift */,
-				0554B6AF194E36A700E767C5 /* Day.swift */,
 				0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */,
+				453154C31A8E8DEF002F1B66 /* Constants.swift */,
+				0554B6AF194E36A700E767C5 /* Day.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */,
 				0580C041194D30F5002B230B /* AppDelegate.swift in Sources */,
 				0554B6B0194E36A700E767C5 /* Day.swift in Sources */,
-				45168BF419ABA1F600A1461A /* Constants.swift in Sources */,
+				453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

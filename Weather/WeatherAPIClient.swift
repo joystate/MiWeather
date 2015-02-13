@@ -16,7 +16,7 @@ class WeatherAPIClient: NSObject {
     func fetchForecast(completion: (result: NSDictionary) -> ()) {
         
         var urlString: String = constants.baseURL + urlStringForLocation + constants.weatherAPIKey
-        var url: NSURL = NSURL.URLWithString(urlString)
+        var url: NSURL = NSURL(string: urlString)!
         var request: NSURLRequest = NSURLRequest(URL: url)
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)

@@ -57,15 +57,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             })
         })
     }
-
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.week.count
     }
-    
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as WeatherCell
         var day = self.week[indexPath.row]
         
@@ -80,12 +77,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.dayLabel!.text = "\(day.dayTemp) C"
         cell.nightLabel!.text = "\(day.nightTemp) C"
-
+        
         return cell
+
     }
-
-    
-    
-
 }
 

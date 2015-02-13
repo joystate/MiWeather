@@ -34,6 +34,8 @@
 		05B0E251194E7F4300820EC7 /* 50n.png in Resources */ = {isa = PBXBuildFile; fileRef = 05B0E23F194E7F4300820EC7 /* 50n.png */; };
 		05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0E252194E856000820EC7 /* WeatherCell.swift */; };
 		05B0E255194E856000820EC7 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B0E253194E856000820EC7 /* WeatherCell.xib */; };
+		450AE7B01A8EA00E00C78729 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7AF1A8EA00E00C78729 /* Info.plist */; };
+		450AE7B21A8EA0C900C78729 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7B11A8EA0C900C78729 /* Info.plist */; };
 		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,13 +52,13 @@
 /* Begin PBXFileReference section */
 		0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPIClient.swift; path = ../../../../Documents/Weather/Weather/WeatherAPIClient.swift; sourceTree = "<group>"; };
 		0554B6AF194E36A700E767C5 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = ../../../../Documents/Weather/Weather/Day.swift; sourceTree = "<group>"; };
-		0580C03B194D30F5002B230B /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0580C03B194D30F5002B230B /* MiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0580C03F194D30F5002B230B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0580C040194D30F5002B230B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0580C042194D30F5002B230B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0580C045194D30F5002B230B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0580C047194D30F6002B230B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0580C04D194D30F6002B230B /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0580C04D194D30F6002B230B /* MiWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0580C052194D30F6002B230B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0580C053194D30F6002B230B /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		05B0E22E194E7F4300820EC7 /* 01d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01d.png; sourceTree = "<group>"; };
@@ -77,8 +79,10 @@
 		05B0E23D194E7F4300820EC7 /* 13n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13n.png; sourceTree = "<group>"; };
 		05B0E23E194E7F4300820EC7 /* 50d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50d.png; sourceTree = "<group>"; };
 		05B0E23F194E7F4300820EC7 /* 50n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50n.png; sourceTree = "<group>"; };
-		05B0E252194E856000820EC7 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCell.swift; path = Weather/Views/WeatherCell.swift; sourceTree = SOURCE_ROOT; };
-		05B0E253194E856000820EC7 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherCell.xib; path = Weather/Views/WeatherCell.xib; sourceTree = SOURCE_ROOT; };
+		05B0E252194E856000820EC7 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCell.swift; path = MiWeather/Views/WeatherCell.swift; sourceTree = SOURCE_ROOT; };
+		05B0E253194E856000820EC7 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherCell.xib; path = MiWeather/Views/WeatherCell.xib; sourceTree = SOURCE_ROOT; };
+		450AE7AF1A8EA00E00C78729 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		450AE7B11A8EA0C900C78729 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Documents/Weather/Constants.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -104,8 +108,8 @@
 		0580C032194D30F5002B230B = {
 			isa = PBXGroup;
 			children = (
-				0580C03D194D30F5002B230B /* Weather */,
-				0580C050194D30F6002B230B /* WeatherTests */,
+				0580C03D194D30F5002B230B /* MiWeather */,
+				0580C050194D30F6002B230B /* MiWeatherTests */,
 				450780CB1A8E95F900B08E3F /* Frameworks */,
 				0580C03C194D30F5002B230B /* Products */,
 			);
@@ -114,15 +118,16 @@
 		0580C03C194D30F5002B230B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0580C03B194D30F5002B230B /* Weather.app */,
-				0580C04D194D30F6002B230B /* WeatherTests.xctest */,
+				0580C03B194D30F5002B230B /* MiWeather.app */,
+				0580C04D194D30F6002B230B /* MiWeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0580C03D194D30F5002B230B /* Weather */ = {
+		0580C03D194D30F5002B230B /* MiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				450AE7AF1A8EA00E00C78729 /* Info.plist */,
 				0580C040194D30F5002B230B /* AppDelegate.swift */,
 				450780CA1A8E958900B08E3F /* Service */,
 				05B0E258194E91BF00820EC7 /* Models */,
@@ -131,7 +136,7 @@
 				0580C047194D30F6002B230B /* Images.xcassets */,
 				0580C03E194D30F5002B230B /* Supporting Files */,
 			);
-			path = Weather;
+			path = MiWeather;
 			sourceTree = "<group>";
 		};
 		0580C03E194D30F5002B230B /* Supporting Files */ = {
@@ -143,13 +148,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0580C050194D30F6002B230B /* WeatherTests */ = {
+		0580C050194D30F6002B230B /* MiWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				450AE7B11A8EA0C900C78729 /* Info.plist */,
 				0580C053194D30F6002B230B /* WeatherTests.swift */,
 				0580C051194D30F6002B230B /* Supporting Files */,
 			);
-			path = WeatherTests;
+			path = MiWeatherTests;
 			sourceTree = "<group>";
 		};
 		0580C051194D30F6002B230B /* Supporting Files */ = {
@@ -231,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0580C03A194D30F5002B230B /* Weather */ = {
+		0580C03A194D30F5002B230B /* MiWeather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0580C057194D30F6002B230B /* Build configuration list for PBXNativeTarget "Weather" */;
+			buildConfigurationList = 0580C057194D30F6002B230B /* Build configuration list for PBXNativeTarget "MiWeather" */;
 			buildPhases = (
 				0580C037194D30F5002B230B /* Sources */,
 				0580C038194D30F5002B230B /* Frameworks */,
@@ -243,14 +249,14 @@
 			);
 			dependencies = (
 			);
-			name = Weather;
+			name = MiWeather;
 			productName = Weather;
-			productReference = 0580C03B194D30F5002B230B /* Weather.app */;
+			productReference = 0580C03B194D30F5002B230B /* MiWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0580C04C194D30F6002B230B /* WeatherTests */ = {
+		0580C04C194D30F6002B230B /* MiWeatherTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0580C05A194D30F6002B230B /* Build configuration list for PBXNativeTarget "WeatherTests" */;
+			buildConfigurationList = 0580C05A194D30F6002B230B /* Build configuration list for PBXNativeTarget "MiWeatherTests" */;
 			buildPhases = (
 				0580C049194D30F6002B230B /* Sources */,
 				0580C04A194D30F6002B230B /* Frameworks */,
@@ -261,9 +267,9 @@
 			dependencies = (
 				0580C04F194D30F6002B230B /* PBXTargetDependency */,
 			);
-			name = WeatherTests;
+			name = MiWeatherTests;
 			productName = WeatherTests;
-			productReference = 0580C04D194D30F6002B230B /* WeatherTests.xctest */;
+			productReference = 0580C04D194D30F6002B230B /* MiWeatherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -284,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0580C036194D30F5002B230B /* Build configuration list for PBXProject "Weather" */;
+			buildConfigurationList = 0580C036194D30F5002B230B /* Build configuration list for PBXProject "MiWeather" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -297,8 +303,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0580C03A194D30F5002B230B /* Weather */,
-				0580C04C194D30F6002B230B /* WeatherTests */,
+				0580C03A194D30F5002B230B /* MiWeather */,
+				0580C04C194D30F6002B230B /* MiWeatherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,6 +322,7 @@
 				05B0E244194E7F4300820EC7 /* 03d.png in Resources */,
 				05B0E251194E7F4300820EC7 /* 50n.png in Resources */,
 				05B0E248194E7F4300820EC7 /* 09d.png in Resources */,
+				450AE7B01A8EA00E00C78729 /* Info.plist in Resources */,
 				0580C046194D30F5002B230B /* Main.storyboard in Resources */,
 				05B0E245194E7F4300820EC7 /* 03n.png in Resources */,
 				05B0E243194E7F4300820EC7 /* 02n.png in Resources */,
@@ -336,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450AE7B21A8EA0C900C78729 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +376,7 @@
 /* Begin PBXTargetDependency section */
 		0580C04F194D30F6002B230B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0580C03A194D30F5002B230B /* Weather */;
+			target = 0580C03A194D30F5002B230B /* MiWeather */;
 			targetProxy = 0580C04E194D30F6002B230B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -470,10 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = MiWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MiWeather;
 			};
 			name = Debug;
 		};
@@ -482,17 +490,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = MiWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MiWeather;
 			};
 			name = Release;
 		};
 		0580C05B194D30F6002B230B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weather.app/Weather";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MiWeather.app/MiWeather";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -501,10 +509,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WeatherTests/Info.plist;
+				INFOPLIST_FILE = MiWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MiWeatherTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -512,15 +520,15 @@
 		0580C05C194D30F6002B230B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weather.app/Weather";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MiWeather.app/MiWeather";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WeatherTests/Info.plist;
+				INFOPLIST_FILE = MiWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MiWeatherTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -528,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0580C036194D30F5002B230B /* Build configuration list for PBXProject "Weather" */ = {
+		0580C036194D30F5002B230B /* Build configuration list for PBXProject "MiWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0580C055194D30F6002B230B /* Debug */,
@@ -537,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0580C057194D30F6002B230B /* Build configuration list for PBXNativeTarget "Weather" */ = {
+		0580C057194D30F6002B230B /* Build configuration list for PBXNativeTarget "MiWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0580C058194D30F6002B230B /* Debug */,
@@ -546,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0580C05A194D30F6002B230B /* Build configuration list for PBXNativeTarget "WeatherTests" */ = {
+		0580C05A194D30F6002B230B /* Build configuration list for PBXNativeTarget "MiWeatherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0580C05B194D30F6002B230B /* Debug */,

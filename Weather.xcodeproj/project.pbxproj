@@ -77,8 +77,8 @@
 		05B0E23D194E7F4300820EC7 /* 13n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13n.png; sourceTree = "<group>"; };
 		05B0E23E194E7F4300820EC7 /* 50d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50d.png; sourceTree = "<group>"; };
 		05B0E23F194E7F4300820EC7 /* 50n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50n.png; sourceTree = "<group>"; };
-		05B0E252194E856000820EC7 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCell.swift; path = Weather/View/WeatherCell.swift; sourceTree = SOURCE_ROOT; };
-		05B0E253194E856000820EC7 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherCell.xib; path = Weather/View/WeatherCell.xib; sourceTree = SOURCE_ROOT; };
+		05B0E252194E856000820EC7 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCell.swift; path = Weather/Views/WeatherCell.swift; sourceTree = SOURCE_ROOT; };
+		05B0E253194E856000820EC7 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WeatherCell.xib; path = Weather/Views/WeatherCell.xib; sourceTree = SOURCE_ROOT; };
 		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Documents/Weather/Constants.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -125,9 +125,9 @@
 			children = (
 				0580C040194D30F5002B230B /* AppDelegate.swift */,
 				450780CA1A8E958900B08E3F /* Service */,
-				05B0E258194E91BF00820EC7 /* Model */,
+				05B0E258194E91BF00820EC7 /* Models */,
 				05B0E257194E919C00820EC7 /* Controllers */,
-				05B0E256194E861100820EC7 /* View */,
+				05B0E256194E861100820EC7 /* Views */,
 				0580C047194D30F6002B230B /* Images.xcassets */,
 				0580C03E194D30F5002B230B /* Supporting Files */,
 			);
@@ -185,14 +185,14 @@
 			path = weather_icons;
 			sourceTree = "<group>";
 		};
-		05B0E256194E861100820EC7 /* View */ = {
+		05B0E256194E861100820EC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				05B0E252194E856000820EC7 /* WeatherCell.swift */,
-				0580C044194D30F5002B230B /* Main.storyboard */,
 				05B0E253194E856000820EC7 /* WeatherCell.xib */,
+				0580C044194D30F5002B230B /* Main.storyboard */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		05B0E257194E919C00820EC7 /* Controllers */ = {
@@ -203,12 +203,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		05B0E258194E91BF00820EC7 /* Model */ = {
+		05B0E258194E91BF00820EC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				0554B6AF194E36A700E767C5 /* Day.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		450780CA1A8E958900B08E3F /* Service */ = {

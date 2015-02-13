@@ -45,6 +45,8 @@
 		450AE7DB1A8EAFAA00C78729 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7DA1A8EAFAA00C78729 /* Info.plist */; };
 		450AE7E31A8EB03300C78729 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7E21A8EB03300C78729 /* Info.plist */; };
 		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
+		4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */; };
+		4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		450AE7DA1A8EAFAA00C78729 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450AE7E21A8EB03300C78729 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Documents/Weather/Constants.swift; sourceTree = "<group>"; };
+		4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDataStore.swift; sourceTree = "<group>"; };
+		4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cache.xcdatamodel; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -266,6 +270,8 @@
 		05B0E258194E91BF00820EC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */,
+				4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */,
 				0554B6AF194E36A700E767C5 /* Day.swift */,
 			);
 			path = Models;
@@ -509,9 +515,11 @@
 			files = (
 				0554B6AC194D4A9D00E767C5 /* WeatherAPIClient.swift in Sources */,
 				0580C043194D30F5002B230B /* ViewController.swift in Sources */,
+				4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */,
 				05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */,
 				0580C041194D30F5002B230B /* AppDelegate.swift in Sources */,
 				0554B6B0194E36A700E767C5 /* Day.swift in Sources */,
+				4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */,
 				453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,6 +816,7 @@
 				450AE7D41A8EA45900C78729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		450AE7D61A8EA45900C78729 /* Build configuration list for PBXNativeTarget "MiWeather WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -816,8 +825,22 @@
 				450AE7D21A8EA45900C78729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */,
+			);
+			currentVersion = 4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */;
+			path = Cache.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0580C033194D30F5002B230B /* Project object */;
 }

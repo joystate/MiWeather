@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.projects.cacheStore.Documents</string>
+		<string>group.projects.miweather.Documents</string>
 	</array>
 </dict>
 </plist>

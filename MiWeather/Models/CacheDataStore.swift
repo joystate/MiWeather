@@ -38,10 +38,13 @@ public class CacheDataStore: NSObject {
         }
     }
     
-    func getForecastObjects () -> Array<ForecastDay> {
+    func allForecast (completion:(forecastDays: Array<ForecastDay>) -> ()) {
         let fetchRequest = NSFetchRequest(entityName: "ForecastDay")
         var error: NSError?
-        return self.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as [ForecastDay]
+        let forecastArray = self.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as Array<ForecastDay>
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortedForecast = (forecastArray as NSArray).sortedArrayUsingDescriptors([sortDescriptor]) as Array<ForecastDay>
+        completion(forecastDays: sortedForecast)
     }
     
     // MARK: - Core Data stack

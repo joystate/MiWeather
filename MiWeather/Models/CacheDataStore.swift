@@ -38,32 +38,39 @@ public class CacheDataStore: NSObject {
         }
     }
     
+    func getForecastObjects () -> Array<ForecastDay> {
+        let fetchRequest = NSFetchRequest(entityName: "ForecastDay")
+        var error: NSError?
+        return self.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as [ForecastDay]
+    }
+    
     // MARK: - Core Data stack
+    
     
     public lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "self.edu.com.Some" in the application's documents Application Support directory.
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .AllDomainsMask)
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1] as NSURL
         }()
     
     public lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("Cache", withExtension: "momd")!
+        //println("model url \(modelURL)")
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         }()
     
     public lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
-        let containerPath = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.projects.miweather.Documents")
-        let sqliteURL = containerPath?.URLByAppendingPathComponent("db.sqlite")
-//        let sqlitePath = NSString(format: "%@/%@", containerPath!, "Cache")
-//        let url = NSURL(fileURLWithPath: sqlitePath)
-
+        let containerPath = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.projects.miweather.Documents")?.path
+        let sqlitePath = NSString(format: "%@/%@", containerPath!, "Cache.sqlite")
+        let url = NSURL(fileURLWithPath: sqlitePath)
+        println(url)
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: sqliteURL, options: nil, error: &error) == nil {
+        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
             var dict = [String: AnyObject]()

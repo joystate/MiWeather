@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.init(coder: aDecoder)
     }
     
-    var week: [Day] = []
+    var week: [ForecastDay] = []
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var tableView : UITableView = UITableView(frame: CGRectZero)
@@ -31,13 +31,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.allowsSelection = false
         var nipName = UINib(nibName: "WeatherCell", bundle:nil)
         self.tableView.registerNib(nipName, forCellReuseIdentifier: "Cell")
-        apiClient.fetchForecast({ dict in
-            var forecasts: Array<AnyObject> = dict["list"] as Array
-            for forecast: AnyObject in forecasts {
-                var day: Day = apiClient.forecastToDay(forecast)
-                self.week.append(day)
-            }
-            //println(self.week)
+        
+        CacheDataStore.sharedCacheDataStore.fetchForecast { (forecastDays) -> () in
+            //println("written to core data: \(forecastDays)")
+            self.week = forecastDays
             self.spinner.stopAnimating()
             self.tableView.reloadData()
             UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseOut, animations: {
@@ -46,9 +43,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }, completion: { finished in
                     println("opened!")
             })
-        })
-        CacheDataStore.sharedCacheDataStore.fetchForecast { (forecastDays) -> () in
-            println("written to core data: \(forecastDays)")
         }
     }
     
@@ -59,9 +53,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as WeatherCell
         var day = self.week[indexPath.row]
-        cell.mainLabel.text = day.date
-        var dayImage = UIImage(named: day.iconName! + "d")
-        var nightImage = UIImage(named: day.iconName! + "n")
+        cell.mainLabel.text = dateToString(day.date)
+        var dayImage = UIImage(named: day.iconName)
+        var nightImage = UIImage(named: day.iconName)
         cell.dayView.image = dayImage
         cell.dayView.alpha = 0.5
         cell.nigthView.image = nightImage
@@ -70,5 +64,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.nightLabel!.text = "\(day.nightTemp) C"
         return cell
     }
+    
+    func dateToString(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.stringFromDate(date)
+    }
+    
 }
 

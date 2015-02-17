@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0554B6AC194D4A9D00E767C5 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */; };
-		0554B6B0194E36A700E767C5 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554B6AF194E36A700E767C5 /* Day.swift */; };
 		0580C041194D30F5002B230B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580C040194D30F5002B230B /* AppDelegate.swift */; };
 		0580C043194D30F5002B230B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580C042194D30F5002B230B /* ViewController.swift */; };
 		0580C046194D30F5002B230B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0580C044194D30F5002B230B /* Main.storyboard */; };
@@ -42,13 +41,13 @@
 		450AE7CD1A8EA45900C78729 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7CC1A8EA45900C78729 /* Images.xcassets */; };
 		450AE7D01A8EA45900C78729 /* MiWeather WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 450AE7B71A8EA45900C78729 /* MiWeather WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		450AE7D91A8EA90600C78729 /* ForecastRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AE7D81A8EA90600C78729 /* ForecastRowController.swift */; };
-		450AE7DB1A8EAFAA00C78729 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7DA1A8EAFAA00C78729 /* Info.plist */; };
-		450AE7E31A8EB03300C78729 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 450AE7E21A8EB03300C78729 /* Info.plist */; };
 		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
 		4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */; };
 		4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
 		4581FDA81A939AA200CAB18C /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA71A939AA200CAB18C /* ForecastDay.swift */; };
 		4581FDAA1A939AAE00CAB18C /* ForecastDayMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */; };
+		4581FDAC1A93D48700CAB18C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4581FDAB1A93D48700CAB18C /* CoreData.framework */; };
+		4581FDAD1A93D4A300CAB18C /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA71A939AA200CAB18C /* ForecastDay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +90,6 @@
 
 /* Begin PBXFileReference section */
 		0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPIClient.swift; path = ../../../../Documents/Weather/Weather/WeatherAPIClient.swift; sourceTree = "<group>"; };
-		0554B6AF194E36A700E767C5 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		0580C03B194D30F5002B230B /* MiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0580C040194D30F5002B230B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0580C042194D30F5002B230B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +136,7 @@
 		4581FD711A8EB90900CAB18C /* MiWeather WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MiWeather WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		4581FDA71A939AA200CAB18C /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDayMethods.swift; sourceTree = "<group>"; };
+		4581FDAB1A93D48700CAB18C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -160,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4581FDAC1A93D48700CAB18C /* CoreData.framework in Frameworks */,
 				450AE7B91A8EA45900C78729 /* WatchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +281,6 @@
 				4581FDA71A939AA200CAB18C /* ForecastDay.swift */,
 				4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */,
 				4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */,
-				0554B6AF194E36A700E767C5 /* Day.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +297,7 @@
 		450780CB1A8E95F900B08E3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4581FDAB1A93D48700CAB18C /* CoreData.framework */,
 				459D16E419AC304000DB9CFC /* QuartzCore.framework */,
 				450AE7B81A8EA45900C78729 /* WatchKit.framework */,
 			);
@@ -421,7 +421,7 @@
 		0580C033194D30F5002B230B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Nadia Yudina";
 				TargetAttributes = {
 					0580C03A194D30F5002B230B = {
@@ -485,7 +485,6 @@
 				05B0E244194E7F4300820EC7 /* 03d.png in Resources */,
 				05B0E251194E7F4300820EC7 /* 50n.png in Resources */,
 				05B0E248194E7F4300820EC7 /* 09d.png in Resources */,
-				450AE7DB1A8EAFAA00C78729 /* Info.plist in Resources */,
 				0580C046194D30F5002B230B /* Main.storyboard in Resources */,
 				05B0E245194E7F4300820EC7 /* 03n.png in Resources */,
 				05B0E243194E7F4300820EC7 /* 02n.png in Resources */,
@@ -506,7 +505,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				450AE7E31A8EB03300C78729 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +540,6 @@
 				4581FDA81A939AA200CAB18C /* ForecastDay.swift in Sources */,
 				4581FDAA1A939AAE00CAB18C /* ForecastDayMethods.swift in Sources */,
 				0580C041194D30F5002B230B /* AppDelegate.swift in Sources */,
-				0554B6B0194E36A700E767C5 /* Day.swift in Sources */,
 				4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */,
 				453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */,
 			);
@@ -561,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450AE7BE1A8EA45900C78729 /* InterfaceController.swift in Sources */,
+				4581FDAD1A93D4A300CAB18C /* ForecastDay.swift in Sources */,
 				450AE7D91A8EA90600C78729 /* ForecastRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

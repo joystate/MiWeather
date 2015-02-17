@@ -47,6 +47,8 @@
 		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
 		4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */; };
 		4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
+		4581FDA81A939AA200CAB18C /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA71A939AA200CAB18C /* ForecastDay.swift */; };
+		4581FDAA1A939AAE00CAB18C /* ForecastDayMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +91,7 @@
 
 /* Begin PBXFileReference section */
 		0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherAPIClient.swift; path = ../../../../Documents/Weather/Weather/WeatherAPIClient.swift; sourceTree = "<group>"; };
-		0554B6AF194E36A700E767C5 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = ../../../../Documents/Weather/Weather/Day.swift; sourceTree = "<group>"; };
+		0554B6AF194E36A700E767C5 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		0580C03B194D30F5002B230B /* MiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0580C040194D30F5002B230B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0580C042194D30F5002B230B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,8 @@
 		4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cache.xcdatamodel; sourceTree = "<group>"; };
 		4581FD701A8EB84600CAB18C /* MiWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MiWeather.entitlements; sourceTree = "<group>"; };
 		4581FD711A8EB90900CAB18C /* MiWeather WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MiWeather WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		4581FDA71A939AA200CAB18C /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
+		4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDayMethods.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -274,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */,
+				4581FDA71A939AA200CAB18C /* ForecastDay.swift */,
+				4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */,
 				4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */,
 				0554B6AF194E36A700E767C5 /* Day.swift */,
 			);
@@ -533,6 +539,8 @@
 				0580C043194D30F5002B230B /* ViewController.swift in Sources */,
 				4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */,
 				05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */,
+				4581FDA81A939AA200CAB18C /* ForecastDay.swift in Sources */,
+				4581FDAA1A939AAE00CAB18C /* ForecastDayMethods.swift in Sources */,
 				0580C041194D30F5002B230B /* AppDelegate.swift in Sources */,
 				0554B6B0194E36A700E767C5 /* Day.swift in Sources */,
 				4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */,

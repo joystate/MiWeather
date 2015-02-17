@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 var day: Day = apiClient.forecastToDay(forecast)
                 self.week.append(day)
             }
-            println(self.week)
+            //println(self.week)
             self.spinner.stopAnimating()
             self.tableView.reloadData()
             UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseOut, animations: {
@@ -47,6 +47,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     println("opened!")
             })
         })
+        CacheDataStore.sharedCacheDataStore.fetchForecast { (forecastDays) -> () in
+            println("written to core data: \(forecastDays)")
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

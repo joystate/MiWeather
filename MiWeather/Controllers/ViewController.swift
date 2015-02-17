@@ -65,7 +65,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as WeatherCell
         var day = self.week[indexPath.row]
-        cell.mainLabel.text = dateToString(day.date)
+        cell.mainLabel.text = day.dateToString(day.date)
         var dayImage = UIImage(named: day.iconName)
         var nightImage = UIImage(named: day.iconName)
         cell.dayView.image = dayImage
@@ -75,12 +75,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.dayLabel!.text = "\(Int(day.dayTemp)) C"
         cell.nightLabel!.text = "\(Int(day.nightTemp)) C"
         return cell
-    }
-    
-    func dateToString(date: NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
-        return dateFormatter.stringFromDate(date)
     }
     
 }

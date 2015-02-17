@@ -13,15 +13,17 @@
                         <table alignment="left" layout="vertical" id="Lv1-JR-we3">
                             <items>
                                 <tableRow identifier="ForecastRow" id="llx-IM-OGG" customClass="ForecastRowController" customModule="MiWeather_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="dyM-oP-xji">
+                                    <group key="rootItem" width="1" height="50" alignment="left" id="dyM-oP-xji">
                                         <items>
-                                            <imageView alignment="left" verticalAlignment="center" id="Tv1-g1-CUr"/>
-                                            <label alignment="left" verticalAlignment="center" text="Label" id="dtc-gk-bGp"/>
+                                            <label height="20" alignment="center" verticalAlignment="center" text="Label" id="HAs-dS-dRr"/>
+                                            <imageView width="50" height="50" alignment="center" verticalAlignment="center" contentMode="scaleAspectFit" id="Tv1-g1-CUr"/>
+                                            <label height="20" alignment="center" verticalAlignment="center" text="Label" id="dtc-gk-bGp"/>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="dateLabel" destination="HAs-dS-dRr" id="YpL-gv-BsU"/>
                                         <outlet property="image" destination="Tv1-g1-CUr" id="nKP-rx-GMz"/>
-                                        <outlet property="label" destination="dtc-gk-bGp" id="x4n-H2-0ef"/>
+                                        <outlet property="temperatureLabel" destination="dtc-gk-bGp" id="dQ3-1T-2Ew"/>
                                     </connections>
                                 </tableRow>
                             </items>

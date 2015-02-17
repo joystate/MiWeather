@@ -34,7 +34,7 @@ extension ForecastDay {
         } else {
             return cachedForecast[0]
         }
-}
+    }
     
     class func epochToDateWithoutTime (unixTime: Double) -> NSDate {
         var interval: NSTimeInterval = unixTime
@@ -44,5 +44,11 @@ extension ForecastDay {
             | .CalendarUnitMonth
             | .CalendarUnitDay, fromDate: date)
         return calendar.dateFromComponents(components)!
+    }
+    
+    func dateToString(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd"
+        return dateFormatter.stringFromDate(self.date)
     }
 }

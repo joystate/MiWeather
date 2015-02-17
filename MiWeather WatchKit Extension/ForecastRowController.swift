@@ -11,7 +11,7 @@ import UIKit
 
 class ForecastRowController: NSObject {
     
-    @IBOutlet weak var label: WKInterfaceLabel!
+    @IBOutlet weak var temperatureLabel: WKInterfaceLabel!
     @IBOutlet weak var image: WKInterfaceImage!
-   
+    @IBOutlet weak var dateLabel: WKInterfaceLabel!
 }

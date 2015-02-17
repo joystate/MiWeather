@@ -43,6 +43,7 @@ public class CacheDataStore {
                             daysInForecast.append(day!)
                         }
                     }
+                    self.saveContext()
                     completion(forecastDays: daysInForecast)
                 }
             } else {

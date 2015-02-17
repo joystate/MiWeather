@@ -13,32 +13,27 @@ extension ForecastDay {
     
     class func createForecastDay(forecastDict JSON: NSDictionary, managedObjectContext: NSManagedObjectContext) -> (ForecastDay?) {
         let dayEntity = NSEntityDescription.entityForName("ForecastDay", inManagedObjectContext: managedObjectContext)
-        let fetchRequest = NSFetchRequest(entityName: "ForecastDay")
+        var day = ForecastDay(entity: dayEntity!, insertIntoManagedObjectContext: managedObjectContext)
         var unixDate: Double = JSON["dt"] as Double
-        var date: NSDate = epochToDateWithoutTime(unixDate)
-        fetchRequest.predicate = NSPredicate(format: "date == %@", date)
-        var error: NSError?
-        let cachedForecast = managedObjectContext.executeFetchRequest(fetchRequest, error: &error) as Array<ForecastDay>
-        if cachedForecast.count == 0 {
-            var day = ForecastDay(entity: dayEntity!, insertIntoManagedObjectContext: managedObjectContext)
-            day.date = date
-            let temperatureDict: Dictionary<String, Double> = JSON["temp"] as Dictionary
-            day.dayTemp = temperatureDict["day"]! as Double
-            day.nightTemp = temperatureDict["night"]! as Double
-            day.humidity = JSON["humidity"]! as Double
-            day.pressure = JSON["pressure"]! as Double
-            let weatherArray: Array<AnyObject> = JSON["weather"] as Array
-            day.weatherDescription = weatherArray[0]["description"] as String
-            day.iconName = weatherArray[0]["icon"] as String
-            return day
-        } else {
-            return cachedForecast[0]
-        }
+        day.date = epochToDate(unixDate)
+        let temperatureDict: Dictionary<String, Double> = JSON["temp"] as Dictionary
+        day.dayTemp = temperatureDict["day"]! as Double
+        day.nightTemp = temperatureDict["night"]! as Double
+        day.humidity = JSON["humidity"]! as Double
+        day.pressure = JSON["pressure"]! as Double
+        let weatherArray: Array<AnyObject> = JSON["weather"] as Array
+        day.weatherDescription = weatherArray[0]["description"] as String
+        day.iconName = weatherArray[0]["icon"] as String
+        return day
     }
     
-    class func epochToDateWithoutTime (unixTime: Double) -> NSDate {
+    class func epochToDate (unixTime: Double) -> NSDate {
         var interval: NSTimeInterval = unixTime
         var date = NSDate(timeIntervalSince1970:interval)
+        return date
+    }
+    
+    func dateWithoutTime (date: NSDate) -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let components: NSDateComponents = calendar.components(.CalendarUnitYear
             | .CalendarUnitMonth

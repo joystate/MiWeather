@@ -10,6 +10,7 @@ import CoreData
 
 public class CacheDataStore {
     
+    let updateInterval: NSTimeInterval = 43200
     let managedObjectContext: NSManagedObjectContext?
     let persistentStoreCoordinator: NSPersistentStoreCoordinator
     let model: NSManagedObjectModel?
@@ -31,15 +32,22 @@ public class CacheDataStore {
     // MARK: - Populate Core Data
     
     func fetchForecast(completion: (forecastDays: Array<ForecastDay>) -> ()) {
-        var daysInForecast: [ForecastDay] = []
-        weatherAPIClient.fetchForecast { (result) -> () in
-            if let dict = result as? [String: AnyObject] {
-                for weatherDict in dict["list"] as Array<[String: AnyObject]> {
-                    let day = ForecastDay.createForecastDay(forecastDict: weatherDict, managedObjectContext: self.managedObjectContext!)
-                    daysInForecast.append(day!)
+        CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
+            let today = forecastDays.first
+            if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval) {
+                var daysInForecast: [ForecastDay] = []
+                self.weatherAPIClient.fetchForecast { (result) -> () in
+                    if let dict = result as? [String: AnyObject] {
+                        for weatherDict in dict["list"] as Array<[String: AnyObject]> {
+                            let day = ForecastDay.createForecastDay(forecastDict: weatherDict, managedObjectContext: self.managedObjectContext!)
+                            daysInForecast.append(day!)
+                        }
+                    }
+                    completion(forecastDays: daysInForecast)
                 }
+            } else {
+                completion(forecastDays: forecastDays);
             }
-            completion(forecastDays: daysInForecast)
         }
     }
     

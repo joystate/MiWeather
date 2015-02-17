@@ -13,11 +13,12 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     
     @IBOutlet weak var table: WKInterfaceTable!
+    var week: [ForecastDay] = []
     
     override init(context: AnyObject?) {
         // Initialize variables here.
         super.init(context: context)
-        self.table.setNumberOfRows(3, withRowType: "ForecastRow")
+        //self.table.setNumberOfRows(3, withRowType: "ForecastRow")
         // Configure interface objects here.
         NSLog("%@ init", self)
     }
@@ -25,6 +26,10 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
+            self.table.setNumberOfRows(forecastDays.count, withRowType: "ForecastRow")
+        }
+
         NSLog("%@ will activate", self)
     }
 

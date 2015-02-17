@@ -28,6 +28,13 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             self.table.setNumberOfRows(forecastDays.count, withRowType: "ForecastRow")
+            for (index, day) in enumerate(forecastDays) {
+                if let row = self.table.rowControllerAtIndex(index) as? ForecastRowController {
+                    row.label.setText("\(Int(day.dayTemp)) C")
+                    var dayImage = UIImage(named: day.iconName)
+                    row.image.setImage(dayImage)
+                }
+            }
         }
 
         NSLog("%@ will activate", self)

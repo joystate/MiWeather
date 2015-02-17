@@ -53,6 +53,7 @@
 		4581FDB01A93DCC900CAB18C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
 		4581FDB11A93DCE300CAB18C /* ForecastDayMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */; };
 		4581FDB21A93E0ED00CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
+		4581FDB41A93FCFD00CAB18C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDB31A93FCFD00CAB18C /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		4581FDA71A939AA200CAB18C /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDayMethods.swift; sourceTree = "<group>"; };
 		4581FDAB1A93D48700CAB18C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4581FDB31A93FCFD00CAB18C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -295,6 +297,7 @@
 			children = (
 				453154C31A8E8DEF002F1B66 /* Constants.swift */,
 				0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */,
+				4581FDB31A93FCFD00CAB18C /* Reachability.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				4581FDAA1A939AAE00CAB18C /* ForecastDayMethods.swift in Sources */,
 				0580C041194D30F5002B230B /* AppDelegate.swift in Sources */,
 				4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */,
+				4581FDB41A93FCFD00CAB18C /* Reachability.swift in Sources */,
 				453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

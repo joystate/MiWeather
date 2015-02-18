@@ -23,6 +23,7 @@ extension ForecastDay {
         day.pressure = JSON["pressure"]! as Double
         let weatherArray: Array<AnyObject> = JSON["weather"] as Array
         day.weatherDescription = weatherArray[0]["description"] as String
+        day.code = weatherArray[0]["id"] as Int
         day.iconName = weatherArray[0]["icon"] as String
         return day
     }

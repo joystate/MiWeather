@@ -41,6 +41,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func isWeatherChangeCritical(day1: ForecastDay, day2: ForecastDay) -> Bool {
+        return isTemperatureCritical(day1, day2: day2) || isCodeCritical(day1, day2: day2) || isPressureCritical(day1, day2: day2)
+    }
+    
+    func isTemperatureCritical(day1: ForecastDay, day2: ForecastDay) -> Bool {
+        return (day2.dayTemp.integerValue - day1.dayTemp.integerValue) > 5
+    }
+    
+    func isCodeCritical(day1: ForecastDay, day2: ForecastDay) -> Bool {
+        if ((day2.code.integerValue == 800 || day2.code.integerValue == 801) && (day1.code.integerValue != 800 && day1.code.integerValue != 801)) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isPressureCritical(day1: ForecastDay, day2: ForecastDay) -> Bool {
+        return  day1.pressure.floatValue - day2.pressure.floatValue > 20
+    }
+    
+    //MARK: table view delegate
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.week.count
     }
@@ -57,6 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.nigthView.alpha = 0.5
         cell.dayLabel!.text = "\(Int(day.dayTemp)) C"
         cell.nightLabel!.text = "\(Int(day.nightTemp)) C"
+        //println("\(day.pressure), \(day.weatherDescription), \(day.code), \(day.dayTemp)")
         return cell
     }
     

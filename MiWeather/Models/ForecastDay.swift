@@ -20,5 +20,6 @@ class ForecastDay: NSManagedObject {
     @NSManaged var nightTemp: NSNumber
     @NSManaged var pressure: NSNumber
     @NSManaged var weatherDescription: String
+    @NSManaged var code: NSNumber
 
 }

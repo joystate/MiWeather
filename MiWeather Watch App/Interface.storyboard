@@ -36,5 +36,29 @@
             </objects>
             <point key="canvasLocation" x="150" y="252"/>
         </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="EYd-v9-sJc">
+            <objects>
+                <glanceController topTemplateType="bodyBody" id="mrI-qE-bpE" customClass="GlanceController" customModule="MiWeather_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="erk-Zz-hRN"/>
+                        <label alignment="left" id="18s-Uw-f1s">
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                        </label>
+                        <group alignment="left" contentMode="scaleAspectFit" id="adb-ZG-qO7">
+                            <items>
+                                <imageView alignment="left" id="IQA-QI-0GA"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="dateLabel" destination="erk-Zz-hRN" id="Cql-eC-mV5"/>
+                        <outlet property="image" destination="IQA-QI-0GA" id="T93-Iv-CIW"/>
+                        <outlet property="temperatureLabel" destination="18s-Uw-f1s" id="LRC-bM-Yvi"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="150" y="465"/>
+        </scene>
     </scenes>
 </document>

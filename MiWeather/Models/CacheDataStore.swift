@@ -11,7 +11,6 @@ import CoreData
 public class CacheDataStore {
     
     let updateInterval: NSTimeInterval = 43200
-    var currentPressure: Double?
     let managedObjectContext: NSManagedObjectContext?
     let persistentStoreCoordinator: NSPersistentStoreCoordinator
     let model: NSManagedObjectModel?
@@ -35,7 +34,6 @@ public class CacheDataStore {
     func fetchForecast(completion: (forecastDays: Array<ForecastDay>) -> ()) {
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             let today = forecastDays.first
-            self.currentPressure = today?.pressure as? Double
             if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval) {
                 var daysInForecast: [ForecastDay] = []
                 self.weatherAPIClient.fetchForecast { (result) -> () in
@@ -61,11 +59,6 @@ public class CacheDataStore {
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         let sortedForecast = (forecastArray as NSArray).sortedArrayUsingDescriptors([sortDescriptor]) as Array<ForecastDay>
         completion(forecastDays: sortedForecast)
-    }
-    
-    func isPressureChangeCritical (oldPressure: Double, updatedPressure: Double) -> Bool {
-        //if change is critical, return yes
-        return false
     }
     
     // MARK: - Core Data stack

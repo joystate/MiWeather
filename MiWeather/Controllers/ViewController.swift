@@ -38,6 +38,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }, completion: { finished in
                     println("opened!")
             })
+            let today: ForecastDay = forecastDays.first!
+            let tomorrow: ForecastDay = forecastDays[1]
+            
+            var notification = UILocalNotification()
+            notification.alertBody = "headache is possible"
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
+            
+//            if self.isWeatherChangeCritical(today, day2: tomorrow) {
+//                var notification = UILocalNotification()
+//                notification.alertBody = "headache is possible"
+//                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//            }
         }
     }
     

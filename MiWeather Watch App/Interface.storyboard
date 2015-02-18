@@ -60,5 +60,28 @@
             </objects>
             <point key="canvasLocation" x="150" y="465"/>
         </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="VOA-Qd-uOS">
+            <objects>
+                <notificationController id="3ob-tk-mRn">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="a5E-or-0q3"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" offsetNotificationContent="NO" id="I2s-B9-fPT"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="a5E-or-0q3" id="bXF-sf-YQj"/>
+                        <segue destination="Rpz-T9-9AK" kind="relationship" relationship="dynamicNotificationInterface" id="j16-1F-mZF"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="156" y="680"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="u0E-nR-5ls">
+            <objects>
+                <controller id="Rpz-T9-9AK" customClass="NotificationController" customModule="MiWeather_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="680"/>
+        </scene>
     </scenes>
 </document>

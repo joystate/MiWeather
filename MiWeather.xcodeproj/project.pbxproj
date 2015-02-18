@@ -56,6 +56,7 @@
 		4581FDB41A93FCFD00CAB18C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDB31A93FCFD00CAB18C /* Reachability.swift */; };
 		45E658621A94F86F000D1972 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDB31A93FCFD00CAB18C /* Reachability.swift */; };
 		45E658641A95286E000D1972 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E658631A95286E000D1972 /* GlanceController.swift */; };
+		45E658661A953792000D1972 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E658651A953792000D1972 /* NotificationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		4581FDB31A93FCFD00CAB18C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		45E658631A95286E000D1972 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		45E658651A953792000D1972 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				4581FD711A8EB90900CAB18C /* MiWeather WatchKit Extension.entitlements */,
+				45E658651A953792000D1972 /* NotificationController.swift */,
 				450AE7D81A8EA90600C78729 /* ForecastRowController.swift */,
 				450AE7BD1A8EA45900C78729 /* InterfaceController.swift */,
 				45E658631A95286E000D1972 /* GlanceController.swift */,
@@ -573,6 +576,7 @@
 				45E658621A94F86F000D1972 /* Reachability.swift in Sources */,
 				450AE7BE1A8EA45900C78729 /* InterfaceController.swift in Sources */,
 				4581FDAD1A93D4A300CAB18C /* ForecastDay.swift in Sources */,
+				45E658661A953792000D1972 /* NotificationController.swift in Sources */,
 				4581FDB11A93DCE300CAB18C /* ForecastDayMethods.swift in Sources */,
 				4581FDAE1A93DC5A00CAB18C /* CacheDataStore.swift in Sources */,
 				45E658641A95286E000D1972 /* GlanceController.swift in Sources */,

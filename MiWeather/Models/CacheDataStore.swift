@@ -7,8 +7,9 @@
 //
 
 import CoreData
+import CoreLocation
 
-public class CacheDataStore {
+public class CacheDataStore: LocatorDelegate {
     
     let updateInterval: NSTimeInterval = 43200
     var managedObjectContext: NSManagedObjectContext?

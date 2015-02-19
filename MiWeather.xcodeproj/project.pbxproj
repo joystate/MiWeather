@@ -57,6 +57,8 @@
 		45C2A1781A9694240094E33C /* LocationMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A1771A9694240094E33C /* LocationMethods.swift */; };
 		45C2A17A1A96970E0094E33C /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A1791A96970E0094E33C /* ForecastDay.swift */; };
 		45C2A17C1A96970F0094E33C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A17B1A96970F0094E33C /* Location.swift */; };
+		45C2A17D1A969E510094E33C /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A1791A96970E0094E33C /* ForecastDay.swift */; };
+		45C2A17E1A969E570094E33C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2A17B1A96970F0094E33C /* Location.swift */; };
 		45C6C6191A964E60003EAF14 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6C6181A964E60003EAF14 /* Locator.swift */; };
 		45E658621A94F86F000D1972 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDB31A93FCFD00CAB18C /* Reachability.swift */; };
 		45E658641A95286E000D1972 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E658631A95286E000D1972 /* GlanceController.swift */; };
@@ -595,8 +597,10 @@
 				4581FDAE1A93DC5A00CAB18C /* CacheDataStore.swift in Sources */,
 				45E658641A95286E000D1972 /* GlanceController.swift in Sources */,
 				450AE7D91A8EA90600C78729 /* ForecastRowController.swift in Sources */,
+				45C2A17D1A969E510094E33C /* ForecastDay.swift in Sources */,
 				4581FDAF1A93DCBD00CAB18C /* WeatherAPIClient.swift in Sources */,
 				4581FDB21A93E0ED00CAB18C /* Cache.xcdatamodeld in Sources */,
+				45C2A17E1A969E570094E33C /* Location.swift in Sources */,
 				4581FDB01A93DCC900CAB18C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

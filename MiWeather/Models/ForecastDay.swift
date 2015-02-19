@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+@objc(ForecastDay)
+
 class ForecastDay: NSManagedObject {
 
     @NSManaged var code: NSNumber

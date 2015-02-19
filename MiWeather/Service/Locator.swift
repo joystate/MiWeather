@@ -9,30 +9,35 @@
 import Foundation
 import CoreLocation
 
+protocol LocatorDelegate {
+    func locator(locator: Locator, didReceivePlacemark placemark:CLPlacemark)
+}
+
 class Locator: NSObject, CLLocationManagerDelegate {
     
     var seenError : Bool = false
     var locationFixAchieved : Bool = false
     var locationStatus : NSString = "Not Started"
-    var locationManager: CLLocationManager!
+    var manager: CLLocationManager!
+    var delegate: LocatorDelegate?
     
     override init() {
         super.init()
         seenError = false
         locationFixAchieved = false
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
+            manager.startUpdatingLocation()
         }
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            locationManager.requestWhenInUseAuthorization()
+            manager.requestWhenInUseAuthorization()
         }
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        locationManager.stopUpdatingLocation()
+        self.manager.stopUpdatingLocation()
         if ((error) != nil) {
             if (seenError == false) {
                 seenError = true
@@ -47,13 +52,23 @@ class Locator: NSObject, CLLocationManagerDelegate {
             var locationArray = locations as NSArray
             var locationObj = locationArray.lastObject as! CLLocation
             var coord = locationObj.coordinate
+            CLGeocoder().reverseGeocodeLocation(locationObj, completionHandler: { (placemarks, error) -> Void in
+                if ((error != nil)) {
+                   self.locationManager(self.manager, didFailWithError: error)
+                }
+                if (placemarks.count != 0) {
+                    let lastPlacemark: CLPlacemark? = placemarks.first as? CLPlacemark
+                    self.delegate?.locator(self, didReceivePlacemark: lastPlacemark!)
+                } else {
+                    self.locationManager(self.manager, didFailWithError: error)
+                }
+            })
             println(coord.latitude)
             println(coord.longitude)
         }
     }
 
-    func locationManager(manager: CLLocationManager!,
-        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             var shouldIAllow = false
             switch status {
             case CLAuthorizationStatus.Restricted:
@@ -68,7 +83,7 @@ class Locator: NSObject, CLLocationManagerDelegate {
             }
             if (shouldIAllow == true) {
                 // Start location services
-                locationManager.startUpdatingLocation()
+                self.manager.startUpdatingLocation()
             } else {
                 NSLog("Denied access: \(locationStatus)")
             }

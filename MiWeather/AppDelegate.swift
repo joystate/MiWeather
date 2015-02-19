@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var category = UIMutableUserNotificationCategory()
         category.identifier = "RiskNotificationCategory"
         category.setActions(nil, forContext: UIUserNotificationActionContext.Default)
-        let categories = NSSet(object: category)
-        let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories as! Set<NSObject>)
+        let categories = NSSet(object: category) as! Set<NSObject>
+        let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories)
         UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
         return true
     }

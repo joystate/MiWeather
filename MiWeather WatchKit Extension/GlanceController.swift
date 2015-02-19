@@ -15,9 +15,10 @@ class GlanceController: WKInterfaceController {
     @IBOutlet weak var temperatureLabel: WKInterfaceLabel!
     @IBOutlet weak var image: WKInterfaceImage!
     
-    override init(context: AnyObject?) {
-        // Initialize variables here.
-        super.init(context: context)
+
+    
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             let today: ForecastDay = forecastDays.first!
             self.dateLabel.setText(today.dateToString(today.dateWithoutTime(today.date)))

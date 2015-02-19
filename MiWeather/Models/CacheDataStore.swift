@@ -11,10 +11,11 @@ import CoreData
 public class CacheDataStore {
     
     let updateInterval: NSTimeInterval = 43200
-    let managedObjectContext: NSManagedObjectContext?
+    var managedObjectContext: NSManagedObjectContext?
     let persistentStoreCoordinator: NSPersistentStoreCoordinator
-    let model: NSManagedObjectModel?
+    var model: NSManagedObjectModel?
     let store: NSPersistentStore?
+    var storeURL: NSURL?
     
     let weatherAPIClient = WeatherAPIClient()
     
@@ -38,7 +39,7 @@ public class CacheDataStore {
                 var daysInForecast: [ForecastDay] = []
                 self.weatherAPIClient.fetchForecast { (result) -> () in
                     if let dict = result as? [String: AnyObject] {
-                        for weatherDict in dict["list"] as Array<[String: AnyObject]> {
+                        for weatherDict in dict["list"] as! Array<[String: AnyObject]> {
                             let day = ForecastDay.createForecastDay(forecastDict: weatherDict, managedObjectContext: self.managedObjectContext!)
                             daysInForecast.append(day!)
                         }
@@ -55,22 +56,20 @@ public class CacheDataStore {
     func allForecast (completion:(forecastDays: Array<ForecastDay>) -> ()) {
         let fetchRequest = NSFetchRequest(entityName: "ForecastDay")
         var error: NSError?
-        let forecastArray = self.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as Array<ForecastDay>
+        let forecastArray = self.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as! Array<ForecastDay>
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        let sortedForecast = (forecastArray as NSArray).sortedArrayUsingDescriptors([sortDescriptor]) as Array<ForecastDay>
+        let sortedForecast = (forecastArray as NSArray).sortedArrayUsingDescriptors([sortDescriptor]) as! Array<ForecastDay>
         completion(forecastDays: sortedForecast)
     }
     
     // MARK: - Core Data stack
     
-    lazy var storeURL: NSURL = {
+    init() {
         let fileManager = NSFileManager.defaultManager()
         let appGroupIdentifier = "group.projects.miweather.Documents"
         let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier(appGroupIdentifier)
-        return containerURL!.URLByAppendingPathComponent("Cache.sqlite")
-        }()
-    
-    init() {
+        storeURL = containerURL!.URLByAppendingPathComponent("Cache.sqlite")
+        
         let bundle = NSBundle.mainBundle()
         let modelURL = bundle.URLForResource("Cache", withExtension: "momd")
         model = NSManagedObjectModel(contentsOfURL: modelURL!)!

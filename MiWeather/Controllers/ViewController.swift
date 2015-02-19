@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as WeatherCell
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! WeatherCell
         var day = self.week[indexPath.row]
         cell.mainLabel.text = day.dateToString(day.dateWithoutTime(day.date))
         var dayImage = UIImage(named: day.iconName)

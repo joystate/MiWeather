@@ -15,9 +15,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
     var week: [ForecastDay] = []
     
-    override init(context: AnyObject?) {
-        // Initialize variables here.
-        super.init(context: context)
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             self.table.setNumberOfRows(forecastDays.count, withRowType: "ForecastRow")
             for (index, day) in enumerate(forecastDays) {

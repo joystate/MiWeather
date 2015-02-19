@@ -23,6 +23,7 @@ class Locator: NSObject, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
         locationManager.requestWhenInUseAuthorization()
     }
     
@@ -40,7 +41,7 @@ class Locator: NSObject, CLLocationManagerDelegate {
         if (locationFixAchieved == false) {
             locationFixAchieved = true
             var locationArray = locations as NSArray
-            var locationObj = locationArray.lastObject as CLLocation
+            var locationObj = locationArray.lastObject as! CLLocation
             var coord = locationObj.coordinate
             
             println(coord.latitude)

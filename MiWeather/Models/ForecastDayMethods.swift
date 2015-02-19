@@ -14,17 +14,17 @@ extension ForecastDay {
     class func createForecastDay(forecastDict JSON: NSDictionary, managedObjectContext: NSManagedObjectContext) -> (ForecastDay?) {
         let dayEntity = NSEntityDescription.entityForName("ForecastDay", inManagedObjectContext: managedObjectContext)
         var day = ForecastDay(entity: dayEntity!, insertIntoManagedObjectContext: managedObjectContext)
-        var unixDate: Double = JSON["dt"] as Double
+        var unixDate: Double = JSON["dt"] as! Double
         day.date = epochToDate(unixDate)
-        let temperatureDict: Dictionary<String, Double> = JSON["temp"] as Dictionary
+        let temperatureDict: Dictionary<String, Double> = JSON["temp"]as! Dictionary
         day.dayTemp = temperatureDict["day"]! as Double
         day.nightTemp = temperatureDict["night"]! as Double
-        day.humidity = JSON["humidity"]! as Double
-        day.pressure = JSON["pressure"]! as Double
-        let weatherArray: Array<AnyObject> = JSON["weather"] as Array
-        day.weatherDescription = weatherArray[0]["description"] as String
-        day.code = weatherArray[0]["id"] as Int
-        day.iconName = weatherArray[0]["icon"] as String
+        day.humidity = JSON["humidity"]! as! Double
+        day.pressure = JSON["pressure"]! as! Double
+        let weatherArray: Array<AnyObject> = JSON["weather"] as! Array
+        day.weatherDescription = weatherArray[0]["description"] as! String
+        day.code = weatherArray[0]["id"] as! Int
+        day.iconName = weatherArray[0]["icon"] as! String
         return day
     }
     

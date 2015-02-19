@@ -2,17 +2,16 @@
 //  ForecastDay.swift
 //  MiWeather
 //
-//  Created by Nadia Yudina on 2/17/15.
+//  Created by Nadia Yudina on 2/19/15.
 //  Copyright (c) 2015 Nadia Yudina. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-@objc(ForecastDay)
-
 class ForecastDay: NSManagedObject {
 
+    @NSManaged var code: NSNumber
     @NSManaged var date: NSDate
     @NSManaged var dayTemp: NSNumber
     @NSManaged var humidity: NSNumber
@@ -20,6 +19,6 @@ class ForecastDay: NSManagedObject {
     @NSManaged var nightTemp: NSNumber
     @NSManaged var pressure: NSNumber
     @NSManaged var weatherDescription: String
-    @NSManaged var code: NSNumber
+    @NSManaged var location: Location
 
 }

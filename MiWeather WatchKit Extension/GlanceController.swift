@@ -15,8 +15,6 @@ class GlanceController: WKInterfaceController {
     @IBOutlet weak var temperatureLabel: WKInterfaceLabel!
     @IBOutlet weak var image: WKInterfaceImage!
     
-
-    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in

@@ -67,7 +67,7 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="a5E-or-0q3"/>
                     </items>
-                    <notificationCategory key="notificationCategory" offsetNotificationContent="NO" id="I2s-B9-fPT"/>
+                    <notificationCategory key="notificationCategory" identifier="RiskNotificationCategory" offsetNotificationContent="NO" id="I2s-B9-fPT"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="a5E-or-0q3" id="bXF-sf-YQj"/>
                         <segue destination="Rpz-T9-9AK" kind="relationship" relationship="dynamicNotificationInterface" id="j16-1F-mZF"/>

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var week: [ForecastDay] = []
+    let locator = Locator()
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var tableView : UITableView = UITableView(frame: CGRectZero)
@@ -41,14 +42,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let today: ForecastDay = forecastDays.first!
             let tomorrow: ForecastDay = forecastDays[1]
             
-            var notification = UILocalNotification()
-            notification.alertBody = "headache is possible"
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-
-            
 //            if self.isWeatherChangeCritical(today, day2: tomorrow) {
 //                var notification = UILocalNotification()
 //                notification.alertBody = "headache is possible"
+//            notification.fireDate = NSDate()
+//            notification.category = "RiskNotificationCategory"
 //                UIApplication.sharedApplication().scheduleLocalNotification(notification)
 //            }
         }

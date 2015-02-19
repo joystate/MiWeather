@@ -1,0 +1,7 @@
+{
+"aps": {
+"alert": "Risk of headache",
+"title": "Weather change",
+"category": "RiskNotificationCategory"
+},
+}

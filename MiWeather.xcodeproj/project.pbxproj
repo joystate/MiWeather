@@ -42,6 +42,7 @@
 		450AE7D01A8EA45900C78729 /* MiWeather WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 450AE7B71A8EA45900C78729 /* MiWeather WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		450AE7D91A8EA90600C78729 /* ForecastRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AE7D81A8EA90600C78729 /* ForecastRowController.swift */; };
 		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
+		455336841A9639370041BE45 /* Payload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 455336831A9639370041BE45 /* Payload.apns */; };
 		4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */; };
 		4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
 		4581FDA81A939AA200CAB18C /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA71A939AA200CAB18C /* ForecastDay.swift */; };
@@ -54,6 +55,7 @@
 		4581FDB11A93DCE300CAB18C /* ForecastDayMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */; };
 		4581FDB21A93E0ED00CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
 		4581FDB41A93FCFD00CAB18C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDB31A93FCFD00CAB18C /* Reachability.swift */; };
+		45C6C6191A964E60003EAF14 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6C6181A964E60003EAF14 /* Locator.swift */; };
 		45E658621A94F86F000D1972 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDB31A93FCFD00CAB18C /* Reachability.swift */; };
 		45E658641A95286E000D1972 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E658631A95286E000D1972 /* GlanceController.swift */; };
 		45E658661A953792000D1972 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E658651A953792000D1972 /* NotificationController.swift */; };
@@ -139,6 +141,7 @@
 		450AE7DA1A8EAFAA00C78729 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450AE7E21A8EB03300C78729 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Documents/Weather/Constants.swift; sourceTree = "<group>"; };
+		455336831A9639370041BE45 /* Payload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Payload.apns; sourceTree = "<group>"; };
 		4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDataStore.swift; sourceTree = "<group>"; };
 		4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cache.xcdatamodel; sourceTree = "<group>"; };
 		4581FD701A8EB84600CAB18C /* MiWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MiWeather.entitlements; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		4581FDAB1A93D48700CAB18C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4581FDB31A93FCFD00CAB18C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		459D16E419AC304000DB9CFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		45C6C6181A964E60003EAF14 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		45E658631A95286E000D1972 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		45E658651A953792000D1972 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +307,7 @@
 				453154C31A8E8DEF002F1B66 /* Constants.swift */,
 				0554B6AB194D4A9D00E767C5 /* WeatherAPIClient.swift */,
 				4581FDB31A93FCFD00CAB18C /* Reachability.swift */,
+				45C6C6181A964E60003EAF14 /* Locator.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				450AE7BC1A8EA45900C78729 /* Info.plist */,
+				455336831A9639370041BE45 /* Payload.apns */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 			files = (
 				450AE7C41A8EA45900C78729 /* MiWeather Watch App.app in Resources */,
 				450AE7C01A8EA45900C78729 /* Images.xcassets in Resources */,
+				455336841A9639370041BE45 /* Payload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +557,7 @@
 			files = (
 				0554B6AC194D4A9D00E767C5 /* WeatherAPIClient.swift in Sources */,
 				0580C043194D30F5002B230B /* ViewController.swift in Sources */,
+				45C6C6191A964E60003EAF14 /* Locator.swift in Sources */,
 				4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */,
 				05B0E254194E856000820EC7 /* WeatherCell.swift in Sources */,
 				4581FDA81A939AA200CAB18C /* ForecastDay.swift in Sources */,

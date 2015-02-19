@@ -1,7 +1,14 @@
 {
-"aps": {
-"alert": "Risk of headache",
-"title": "Weather change",
-"category": "RiskNotificationCategory"
-},
+    "aps": {
+        "alert": "Risk of headache",
+        "title": "Weather change",
+        "category": "RiskNotificationCategory"
+    },
+    
+    "WatchKit Simulator Actions": [
+                                   {
+                                   "title": "First Button",
+                                   "identifier": "firstButtonAction"
+                                   }
+                                   ],
 }

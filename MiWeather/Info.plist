@@ -28,7 +28,7 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSLocationWhenInUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 </dict>
 </plist>

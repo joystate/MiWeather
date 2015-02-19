@@ -23,8 +23,12 @@ class Locator: NSObject, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -43,16 +47,14 @@ class Locator: NSObject, CLLocationManagerDelegate {
             var locationArray = locations as NSArray
             var locationObj = locationArray.lastObject as! CLLocation
             var coord = locationObj.coordinate
-            
             println(coord.latitude)
             println(coord.longitude)
         }
     }
-    
+
     func locationManager(manager: CLLocationManager!,
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             var shouldIAllow = false
-            
             switch status {
             case CLAuthorizationStatus.Restricted:
                 locationStatus = "Restricted Access to location"
@@ -64,9 +66,7 @@ class Locator: NSObject, CLLocationManagerDelegate {
                 locationStatus = "Allowed to location Access"
                 shouldIAllow = true
             }
-            NSNotificationCenter.defaultCenter().postNotificationName("LabelHasbeenUpdated", object: nil)
             if (shouldIAllow == true) {
-                NSLog("Location to Allowed")
                 // Start location services
                 locationManager.startUpdatingLocation()
             } else {

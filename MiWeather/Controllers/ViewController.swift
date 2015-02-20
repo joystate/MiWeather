@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let locator = Locator()
         self.view.addSubview(self.tableView)
         self.tableView.frame = CGRectMake(30, self.view.frame.height/2, self.view.frame.width-50, 1)
         self.spinner.startAnimating()

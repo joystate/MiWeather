@@ -9,7 +9,7 @@
 import CoreData
 import CoreLocation
 
-public class CacheDataStore: LocatorDelegate {
+public class CacheDataStore {
     
     let updateInterval: NSTimeInterval = 43200
     var managedObjectContext: NSManagedObjectContext?
@@ -17,8 +17,6 @@ public class CacheDataStore: LocatorDelegate {
     var model: NSManagedObjectModel?
     let store: NSPersistentStore?
     var storeURL: NSURL?
-    let locator = Locator()
-    var isLocationSame = true
     
     let weatherAPIClient = WeatherAPIClient()
     
@@ -38,7 +36,7 @@ public class CacheDataStore: LocatorDelegate {
     func fetchForecast(completion: (forecastDays: Array<ForecastDay>) -> ()) {
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             let today = forecastDays.first
-            if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval || !self.isLocationSame) {
+            if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval) {
                 var daysInForecast: [ForecastDay] = []
                 self.weatherAPIClient.fetchForecast { (result) -> () in
                     if let dict = result as? [String: AnyObject] {
@@ -105,8 +103,8 @@ public class CacheDataStore: LocatorDelegate {
     
     // MARK: - Locator Delegate
     
-    func locator(locator: Locator, didReceivePlacemark placemark: CLPlacemark) {
-        self.isLocationSame = Location.createLocationSameAsPrevious(latitude: placemark.location.coordinate.latitude, longitude: placemark.location.coordinate.longitude, locality: placemark.locality, managedObjectContext: self.managedObjectContext!)
-    }
+//    func locator(locator: Locator, didReceivePlacemark placemark: CLPlacemark) {
+//        self.isLocationSame = Location.createLocationSameAsPrevious(latitude: placemark.location.coordinate.latitude, longitude: placemark.location.coordinate.longitude, locality: placemark.locality, managedObjectContext: self.managedObjectContext!)
+//    }
 }
 

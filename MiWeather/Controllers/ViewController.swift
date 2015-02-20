@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var week: [ForecastDay] = []
-    let locator = Locator()
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var tableView : UITableView = UITableView(frame: CGRectZero)

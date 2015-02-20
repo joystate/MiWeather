@@ -11,7 +11,7 @@ import CoreData
 
 extension Location {
     
-    class func createLocation(#latitude: Double, longitude: Double, locality: String, managedObjectContext: NSManagedObjectContext) -> (Location?) {
+    class func createLocationSameAsPrevious(#latitude: Double, longitude: Double, locality: String, managedObjectContext: NSManagedObjectContext) -> (Bool) {
         let locationEntity = NSEntityDescription.entityForName("Location", inManagedObjectContext: managedObjectContext)
         var location = Location(entity: locationEntity!, insertIntoManagedObjectContext: managedObjectContext)
         let fetchRequest = NSFetchRequest(entityName: "Location")
@@ -21,16 +21,17 @@ extension Location {
         if let locations = result {
             if locations.count == 0 {
                 var location = Location(entity: locationEntity!, insertIntoManagedObjectContext: managedObjectContext)
-                location.latitude = latitude
-                location.longitude = longitude
+                //round first decimal place is worth up to 11.1 km
+                location.latitude = Double(round(latitude*10)/10)
+                location.longitude = Double(round(longitude*10)/10)
                 location.locality = locality
-                return location
+                return false
             } else {
-                return locations.first
+                return true
             }
         } else {
             println("Could not fetch articles: \(error)")
-            return nil
+            return false
         }
     }
 }

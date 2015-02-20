@@ -17,6 +17,8 @@ public class CacheDataStore: LocatorDelegate {
     var model: NSManagedObjectModel?
     let store: NSPersistentStore?
     var storeURL: NSURL?
+    let locator = Locator()
+    var isLocationSame = true
     
     let weatherAPIClient = WeatherAPIClient()
     
@@ -36,7 +38,7 @@ public class CacheDataStore: LocatorDelegate {
     func fetchForecast(completion: (forecastDays: Array<ForecastDay>) -> ()) {
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             let today = forecastDays.first
-            if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval) {
+            if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval || !self.isLocationSame) {
                 var daysInForecast: [ForecastDay] = []
                 self.weatherAPIClient.fetchForecast { (result) -> () in
                     if let dict = result as? [String: AnyObject] {
@@ -99,6 +101,12 @@ public class CacheDataStore: LocatorDelegate {
                 abort()
             }
         }
+    }
+    
+    // MARK: - Locator Delegate
+    
+    func locator(locator: Locator, didReceivePlacemark placemark: CLPlacemark) {
+        self.isLocationSame = Location.createLocationSameAsPrevious(latitude: placemark.location.coordinate.latitude, longitude: placemark.location.coordinate.longitude, locality: placemark.locality, managedObjectContext: self.managedObjectContext!)
     }
 }
 

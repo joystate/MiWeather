@@ -13,6 +13,7 @@ import Foundation
 class NotificationController: WKUserNotificationInterfaceController {
 
     @IBOutlet weak var headerLabel: WKInterfaceLabel!
+    @IBOutlet weak var infoLabel: WKInterfaceLabel!
     
     override init() {
         // Initialize variables here.
@@ -31,26 +32,10 @@ class NotificationController: WKUserNotificationInterfaceController {
         super.didDeactivate()
     }
 
-    
-//    override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
-//        
-//        self.headerLabel.setText("test")
-//        // This method is called when a local notification needs to be presented.
-//        // Implement it if you use a dynamic notification interface.
-//        // Populate your dynamic notification interface as quickly as possible.
-//        //
-//        // After populating your dynamic notification interface call the completion block.
-//        completionHandler(.Custom)
-//    }
-    
-    
     override func didReceiveRemoteNotification(remoteNotification: [NSObject : AnyObject], withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
-        self.headerLabel.setText("test")
-        // This method is called when a remote notification needs to be presented.
-        // Implement it if you use a dynamic notification interface.
-        // Populate your dynamic notification interface as quickly as possible.
-        //
-        // After populating your dynamic notification interface call the completion block.
+        var notificationDict = remoteNotification["aps"] as! NSDictionary
+        self.headerLabel.setText(notificationDict["title"] as? String)
+        self.infoLabel.setText(notificationDict["alert"] as? String)
         completionHandler(.Custom)
     }
     

@@ -1,4 +1,4 @@
-#WiWeather app
+#MiWeather app
 
 This is a prototype app with the purpose of detecting weather conditions, which can cause migraine.
 ##Description of v1.0:

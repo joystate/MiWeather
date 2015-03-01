@@ -17,7 +17,7 @@ public class CacheDataStore {
     var model: NSManagedObjectModel?
     let store: NSPersistentStore?
     var storeURL: NSURL?
-    
+    let locator = Locator()
     let weatherAPIClient = WeatherAPIClient()
     
     public class var sharedCacheDataStore: CacheDataStore {
@@ -100,11 +100,5 @@ public class CacheDataStore {
             }
         }
     }
-    
-    // MARK: - Locator Delegate
-    
-//    func locator(locator: Locator, didReceivePlacemark placemark: CLPlacemark) {
-//        self.isLocationSame = Location.createLocationSameAsPrevious(latitude: placemark.location.coordinate.latitude, longitude: placemark.location.coordinate.longitude, locality: placemark.locality, managedObjectContext: self.managedObjectContext!)
-//    }
 }
 

@@ -9,16 +9,11 @@
 import Foundation
 import CoreLocation
 
-protocol LocatorDelegate {
-    func locator(locator: Locator, didReceivePlacemark placemark:CLPlacemark)
-}
-
 class Locator: NSObject, CLLocationManagerDelegate {
     
     var seenError : Bool = false
     var locationStatus : NSString = "Not Started"
     var manager: CLLocationManager!
-    var delegate: LocatorDelegate?
     
     override init() {
         super.init()
@@ -33,6 +28,8 @@ class Locator: NSObject, CLLocationManagerDelegate {
             manager.requestWhenInUseAuthorization()
         }
     }
+    
+    //MARK: CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         self.manager.stopUpdatingLocation()
@@ -55,33 +52,31 @@ class Locator: NSObject, CLLocationManagerDelegate {
             }
             if (placemarks.count != 0) {
                 let lastPlacemark: CLPlacemark? = placemarks.first as? CLPlacemark
-                //post notification, then when notification received, the weather will update using the posted location
+                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdatedNotification", object: nil)
             } else {
                 self.locationManager(self.manager, didFailWithError: error)
             }
         })
-        println(coord.latitude)
-        println(coord.longitude)
     }
 
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-            var shouldIAllow = false
-            switch status {
-            case CLAuthorizationStatus.Restricted:
-                locationStatus = "Restricted Access to location"
-            case CLAuthorizationStatus.Denied:
-                locationStatus = "User denied access to location"
-            case CLAuthorizationStatus.NotDetermined:
-                locationStatus = "Status not determined"
-            default:
-                locationStatus = "Allowed to location Access"
-                shouldIAllow = true
-            }
-            if (shouldIAllow == true) {
-                // Start location services
-                self.manager.startUpdatingLocation()
-            } else {
-                NSLog("Denied access: \(locationStatus)")
-            }
+        var shouldIAllow = false
+        switch status {
+        case CLAuthorizationStatus.Restricted:
+            locationStatus = "Restricted Access to location"
+        case CLAuthorizationStatus.Denied:
+            locationStatus = "User denied access to location"
+        case CLAuthorizationStatus.NotDetermined:
+            locationStatus = "Status not determined"
+        default:
+            locationStatus = "Allowed to location Access"
+            shouldIAllow = true
+        }
+        if (shouldIAllow == true) {
+            // Start location services
+            self.manager.startUpdatingLocation()
+        } else {
+            NSLog("Denied access: \(locationStatus)")
+        }
     }
 }

@@ -14,13 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        let requestedTypes = UIUserNotificationType.Alert | .Sound
-        var category = UIMutableUserNotificationCategory()
-        category.identifier = "RiskNotificationCategory"
-        category.setActions(nil, forContext: UIUserNotificationActionContext.Default)
-        let categories = NSSet(object: category) as! Set<NSObject>
-        let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
         return true
     }
     

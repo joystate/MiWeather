@@ -15,9 +15,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var tableView : UITableView = UITableView(frame: CGRectZero)
     
+    //MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let locator = Locator()
         self.view.addSubview(self.tableView)
         self.tableView.frame = CGRectMake(30, self.view.frame.height/2, self.view.frame.width-50, 1)
         self.spinner.startAnimating()
@@ -28,7 +29,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.allowsSelection = false
         var nipName = UINib(nibName: "WeatherCell", bundle:nil)
         self.tableView.registerNib(nipName, forCellReuseIdentifier: "Cell")
-        
+        let cacheDataStore: CacheDataStore? = CacheDataStore.sharedCacheDataStore
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationNotificationReceived:", name: "locationUpdatedNotification", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "locationUpdatedNotification", object: nil)
+    }
+    
+    
+    //MARK: Private methods
+    
+    func locationNotificationReceived(notification: NSNotification){
         CacheDataStore.sharedCacheDataStore.fetchForecast { (forecastDays) -> () in
             self.week = forecastDays
             self.spinner.stopAnimating()
@@ -72,7 +87,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return  day1.pressure.floatValue - day2.pressure.floatValue > 20
     }
     
-    //MARK: table view delegate
+    
+    //MARK: UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.week.count
@@ -91,9 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var nightImageNameString = day.iconName.substringToIndex(day.iconName.endIndex.predecessor()) + "n"
         var nightImage = UIImage(named: nightImageNameString)
         cell.dayView.image = dayImage
-        cell.dayView.alpha = 0.5
         cell.nigthView.image = nightImage
-        cell.nigthView.alpha = 0.5
         cell.dayLabel!.text = "\(Int(day.dayTemp)) C"
         cell.nightLabel!.text = "\(Int(day.nightTemp)) C"
         return cell

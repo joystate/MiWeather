@@ -26,6 +26,7 @@
 		451EE1A41A9680C900232DF2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451EE1A31A9680C900232DF2 /* NotificationController.swift */; };
 		453154C41A8E8DEF002F1B66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453154C31A8E8DEF002F1B66 /* Constants.swift */; };
 		455336841A9639370041BE45 /* Payload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 455336831A9639370041BE45 /* Payload.apns */; };
+		455EFF6A1AA2E7DC0067C1CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 455EFF691AA2E7DC0067C1CC /* Localizable.strings */; };
 		4581FD6C1A8EB17300CAB18C /* CacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */; };
 		4581FD6F1A8EB28800CAB18C /* Cache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4581FD6D1A8EB28800CAB18C /* Cache.xcdatamodeld */; };
 		4581FDAA1A939AAE00CAB18C /* ForecastDayMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581FDA91A939AAE00CAB18C /* ForecastDayMethods.swift */; };
@@ -112,6 +113,7 @@
 		451EE1A31A9680C900232DF2 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		453154C31A8E8DEF002F1B66 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Documents/Weather/Constants.swift; sourceTree = "<group>"; };
 		455336831A9639370041BE45 /* Payload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Payload.apns; sourceTree = "<group>"; };
+		455EFF691AA2E7DC0067C1CC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4581FD6B1A8EB17300CAB18C /* CacheDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheDataStore.swift; sourceTree = "<group>"; };
 		4581FD6E1A8EB28800CAB18C /* Cache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cache.xcdatamodel; sourceTree = "<group>"; };
 		4581FD701A8EB84600CAB18C /* MiWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MiWeather.entitlements; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				450AE7DA1A8EAFAA00C78729 /* Info.plist */,
+				455EFF691AA2E7DC0067C1CC /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0580C046194D30F5002B230B /* Main.storyboard in Resources */,
+				455EFF6A1AA2E7DC0067C1CC /* Localizable.strings in Resources */,
 				05B0E255194E856000820EC7 /* WeatherCell.xib in Resources */,
 				0580C048194D30F6002B230B /* Images.xcassets in Resources */,
 			);

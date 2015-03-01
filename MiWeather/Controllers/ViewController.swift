@@ -33,11 +33,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationNotificationReceived:", name: "locationUpdatedNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "locationNotificationReceived:", name: Constants().kLocationUpdatedNotification, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "locationUpdatedNotification", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: Constants().kLocationUpdatedNotification, object: nil)
     }
     
     

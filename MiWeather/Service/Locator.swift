@@ -55,7 +55,7 @@ class Locator: NSObject, CLLocationManagerDelegate {
                 let latitude = lastPlacemark?.location.coordinate.latitude
                 let longitude = lastPlacemark?.location.coordinate.longitude
                 let locationInfo: [String: CLLocationDegrees] = ["lat": latitude!, "lon": longitude!]
-                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdatedNotification", object: nil, userInfo: locationInfo)
+                NSNotificationCenter.defaultCenter().postNotificationName(Constants().kLocationUpdatedNotification, object: nil, userInfo: locationInfo)
             } else {
                 self.locationManager(self.manager, didFailWithError: error)
             }

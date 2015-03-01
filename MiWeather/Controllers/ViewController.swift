@@ -44,7 +44,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: Private methods
     
     func locationNotificationReceived(notification: NSNotification){
-        CacheDataStore.sharedCacheDataStore.fetchForecast { (forecastDays) -> () in
+        
+        let locationInfo = notification.userInfo!
+        let latitude: Double? = locationInfo["lat"] as? Double
+        let longitude: Double? = locationInfo["lon"] as? Double
+        
+       CacheDataStore.sharedCacheDataStore.fetchForecast(latitude: latitude!, longitude: longitude!) { (forecastDays) -> () in
             self.week = forecastDays
             self.spinner.stopAnimating()
             self.tableView.reloadData()
@@ -65,6 +70,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
+        
+        
+//        CacheDataStore.sharedCacheDataStore.fetchForecast { (forecastDays) -> () in
+//            self.week = forecastDays
+//            self.spinner.stopAnimating()
+//            self.tableView.reloadData()
+//            UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseOut, animations: {
+//                self.tableView.frame = CGRectMake(30, 20,
+//                    self.view.frame.width - 50, self.view.frame.height - 50)
+//                }, completion: { finished in
+//                    println("opened!")
+//            })
+//            let today: ForecastDay = forecastDays.first!
+//            let tomorrow: ForecastDay = forecastDays[1]
+//            
+//            if self.isWeatherChangeCritical(today, day2: tomorrow) {
+//                var notification = UILocalNotification()
+//                notification.alertBody = "Headache is possible"
+//                notification.fireDate = NSDate()
+//                notification.category = "RiskNotificationCategory"
+//                UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//            }
+//        }
     }
     
     func isWeatherChangeCritical(day1: ForecastDay, day2: ForecastDay) -> Bool {

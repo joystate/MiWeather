@@ -33,12 +33,13 @@ public class CacheDataStore {
     
     // MARK: - Populate Core Data
     
-    func fetchForecast(completion: (forecastDays: Array<ForecastDay>) -> ()) {
+    func fetchForecast(#latitude: Double, longitude: Double, completion: (forecastDays: Array<ForecastDay>) -> ()) {
         CacheDataStore.sharedCacheDataStore.allForecast { (forecastDays) -> () in
             let today = forecastDays.first
             if (forecastDays.count < 7 || today?.date.timeIntervalSinceNow > self.updateInterval) {
                 var daysInForecast: [ForecastDay] = []
-                self.weatherAPIClient.fetchForecast { (result) -> () in
+                
+                self.weatherAPIClient.fetchForecast(latitude: latitude, longitude: longitude, completion: { (result) -> () in
                     if let dict = result as? [String: AnyObject] {
                         for weatherDict in dict["list"] as! Array<[String: AnyObject]> {
                             let day = ForecastDay.createForecastDay(forecastDict: weatherDict, managedObjectContext: self.managedObjectContext!)
@@ -47,13 +48,13 @@ public class CacheDataStore {
                     }
                     self.saveContext()
                     completion(forecastDays: daysInForecast)
-                }
+                })
             } else {
                 completion(forecastDays: forecastDays);
             }
         }
     }
-    
+        
     func allForecast (completion:(forecastDays: Array<ForecastDay>) -> ()) {
         let fetchRequest = NSFetchRequest(entityName: "ForecastDay")
         var error: NSError?

@@ -52,7 +52,10 @@ class Locator: NSObject, CLLocationManagerDelegate {
             }
             if (placemarks.count != 0) {
                 let lastPlacemark: CLPlacemark? = placemarks.first as? CLPlacemark
-                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdatedNotification", object: nil)
+                let latitude = lastPlacemark?.location.coordinate.latitude
+                let longitude = lastPlacemark?.location.coordinate.longitude
+                let locationInfo: [String: CLLocationDegrees] = ["lat": latitude!, "lon": longitude!]
+                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdatedNotification", object: nil, userInfo: locationInfo)
             } else {
                 self.locationManager(self.manager, didFailWithError: error)
             }

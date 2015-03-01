@@ -86,15 +86,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! WeatherCell
         var day = self.week[indexPath.row]
         cell.mainLabel.text = day.dateToString(day.dateWithoutTime(day.date))
-        var dayImage = UIImage(named: day.iconName)
-        var nightImage = UIImage(named: day.iconName)
+        var dateImageNameString = day.iconName.substringToIndex(day.iconName.endIndex.predecessor()) + "d"
+        var dayImage = UIImage(named: dateImageNameString)
+        var nightImageNameString = day.iconName.substringToIndex(day.iconName.endIndex.predecessor()) + "n"
+        var nightImage = UIImage(named: nightImageNameString)
         cell.dayView.image = dayImage
         cell.dayView.alpha = 0.5
         cell.nigthView.image = nightImage
         cell.nigthView.alpha = 0.5
         cell.dayLabel!.text = "\(Int(day.dayTemp)) C"
         cell.nightLabel!.text = "\(Int(day.nightTemp)) C"
-        //println("\(day.pressure), \(day.weatherDescription), \(day.code), \(day.dayTemp)")
         return cell
     }
     

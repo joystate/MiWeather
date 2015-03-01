@@ -16,7 +16,6 @@ protocol LocatorDelegate {
 class Locator: NSObject, CLLocationManagerDelegate {
     
     var seenError : Bool = false
-    var locationFixAchieved : Bool = false
     var locationStatus : NSString = "Not Started"
     var manager: CLLocationManager!
     var delegate: LocatorDelegate?
@@ -24,7 +23,6 @@ class Locator: NSObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         seenError = false
-        locationFixAchieved = false
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -47,25 +45,23 @@ class Locator: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        if (locationFixAchieved == false) {
-            locationFixAchieved = true
-            var locationArray = locations as NSArray
-            var locationObj = locationArray.lastObject as! CLLocation
-            var coord = locationObj.coordinate
-            CLGeocoder().reverseGeocodeLocation(locationObj, completionHandler: { (placemarks, error) -> Void in
-                if ((error != nil)) {
-                   self.locationManager(self.manager, didFailWithError: error)
-                }
-                if (placemarks.count != 0) {
-                    let lastPlacemark: CLPlacemark? = placemarks.first as? CLPlacemark
-                    self.delegate?.locator(self, didReceivePlacemark: lastPlacemark!)
-                } else {
-                    self.locationManager(self.manager, didFailWithError: error)
-                }
-            })
-            println(coord.latitude)
-            println(coord.longitude)
-        }
+        manager.stopUpdatingLocation()
+        var locationArray = locations as NSArray
+        var locationObj = locationArray.lastObject as! CLLocation
+        var coord = locationObj.coordinate
+        CLGeocoder().reverseGeocodeLocation(locationObj, completionHandler: { (placemarks, error) -> Void in
+            if ((error != nil)) {
+               self.locationManager(self.manager, didFailWithError: error)
+            }
+            if (placemarks.count != 0) {
+                let lastPlacemark: CLPlacemark? = placemarks.first as? CLPlacemark
+                //post notification, then when notification received, the weather will update using the posted location
+            } else {
+                self.locationManager(self.manager, didFailWithError: error)
+            }
+        })
+        println(coord.latitude)
+        println(coord.longitude)
     }
 
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
